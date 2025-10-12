@@ -146,12 +146,12 @@ add_action('woocommerce_before_single_product_summary', function () {
 
 add_action('woocommerce_before_single_product_summary', function () {
     global $product;
-    $text_cols = 'col-md-6 offset-md-1'; // Default for non-composite (5 + 1 + 6 = 12)
+    $text_cols = 'col-md-7 offset-md-1'; // Default for non-composite (5 + 1 + 6 = 12)
 
     // Check if the product object exists and is a composite product
-    if ( is_a( $product, 'WC_Product' ) && $product->is_type( 'composite' ) ) {
-        $text_cols = 'col-12'; 
-    }
+    // if ( is_a( $product, 'WC_Product' ) && $product->is_type( 'composite' ) ) {
+    //     $text_cols = 'col-12'; 
+    // }
 
     ?>
             </div>
@@ -237,11 +237,38 @@ function woocommerce_add_to_cart_button_text_single() {
     return __( 'Add to basket', 'woocommerce' );
 }
 
-// Change add to cart text on product archives page
-add_filter( 'woocommerce_product_add_to_cart_text', 'woocommerce_add_to_cart_button_text_archives' );
-function woocommerce_add_to_cart_button_text_archives() {
+// --- START: CUSTOM CODE FOR ARCHIVE BUTTON TEXT AND LINK ---
+
+// Change add to cart text on product archives page to "View product"
+add_filter( 'woocommerce_product_add_to_cart_text', 'custom_woocommerce_view_product_button_text_archives' );
+function custom_woocommerce_view_product_button_text_archives() {
+    // Only apply on archive/shop pages (where it's not the single product page)
+    if ( ! is_single( 'product' ) ) {
+        return __( 'View product', 'woocommerce' );
+    }
+    // Fallback for single product, though 'woocommerce_product_single_add_to_cart_text' handles it
     return __( 'Add to basket', 'woocommerce' );
 }
+
+// Change the 'Add to cart' button link on archives to the product page
+add_filter( 'woocommerce_loop_add_to_cart_link', 'custom_woocommerce_replace_add_to_cart_button', 10, 3 );
+function custom_woocommerce_replace_add_to_cart_button( $link, $product, $args ) {
+    // Only apply on archive/shop pages (where it's not the single product page)
+    if ( ! is_single( 'product' ) ) {
+        $link = sprintf( '<a href="%s" data-product_id="%s" data-product_sku="%s" class="%s product_type_%s">%s</a>',
+            esc_url( $product->get_permalink() ), // Change link to product permalink
+            esc_attr( $product->get_id() ),
+            esc_attr( $product->get_sku() ),
+            esc_attr( isset( $args['class'] ) ? $args['class'] : 'button' ),
+            esc_attr( $product->get_type() ),
+            esc_html( $product->is_purchasable() && $product->is_in_stock() ? __( 'View product', 'woocommerce' ) : __( 'Read more', 'woocommerce' ) )
+        );
+    }
+    
+    return $link;
+}
+
+// --- END: CUSTOM CODE FOR ARCHIVE BUTTON TEXT AND LINK ---
 
 // Change "cart" to "basket" in "added to cart" notification
 add_filter('ngettext', function ($translation, $single, $plural, $number, $domain) {

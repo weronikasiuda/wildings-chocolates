@@ -1,0 +1,90 @@
+.wooco_component[class*="wooco_component_layout_grid_"] .wooco_component_product_selection_grid .wooco_component_product_selection_grid_item {
+    width: (calc(33% - 6px));
+    margin: 3px;
+
+    @include media-breakpoint-up(sm) {
+        width: calc(20% - 6px);
+        padding: 0px;
+    }
+
+    @include media-breakpoint-up(md) {
+        width: calc(25% - 6px);
+    }
+
+    @include media-breakpoint-up(lg) {
+        width: calc(20% - 6px);
+    }
+}
+
+.woocommerce .quantity .qty {
+    width: 2.75em;
+}
+
+
+// .wooco_component_layout_grid_4 .wooco_component_product_selection_grid .wooco_component_product_selection_grid_item {
+
+
+.wooco-qty-label {
+    display: none;
+}
+
+.wooco_component_product_selection_grid_item_name {
+    padding: 0px 5px;
+    min-height: 40px;
+}
+
+.wooco_component_product_selection_grid_item_info {
+    @include media-breakpoint-up(xl) {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+.wooco-qty-input {
+    align-items: start;
+    gap: 5px;
+
+
+    @include media-breakpoint-up(xl) {
+        align-items: start;
+        gap: 10px;
+    }
+
+    .quantity {
+        margin-bottom: 1.25rem !important;
+    }
+}
+
+.wooco-minus,
+.wooco-plus {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+    line-height: 18px;
+
+
+    @include media-breakpoint-up(xl) {
+        width: 20px;
+        height: 20px;
+        flex: 0 0 20px;
+        line-height: 18px;
+    }
+}
+
+// }
+
+.wooco_component_product_selection_grid_item::before {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border: none;
+}
+
+.wooco_component_product_selection_grid_item.wooco_item_selected {
+    border-color: $primary;
+}
+
+.wooco_component_product_selection_grid_item.wooco_item_selected::before {
+    background-color: $primary;
+}
