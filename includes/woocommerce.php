@@ -74,7 +74,7 @@ add_action('pre_get_posts', function ($wp_query) {
                     WHERE posts.ID = term_rel.object_id
                     AND term_rel.term_taxonomy_id = (SELECT terms.term_id
                         FROM wp_terms AS terms
-                        JOIN wp_term_taxonomy AS term_tax ON terms.term_id = term_tax->term_id
+                        JOIN wp_term_taxonomy AS term_tax ON terms.term_id = term_tax.term_id
                         WHERE terms.slug = "featured"
                         AND term_tax.taxonomy = "product_visibility"
                         LIMIT 1)), 0, 1),
@@ -127,77 +127,44 @@ add_filter('option_woocommerce_placeholder_image', function ($value, $option) {
     return null;
 }, 10, 2);
 
-// ==============================================================================
-// 1. UPDATED: Add grid HTML to single product image and text content (Start)
-// This opens the section/row and the Image Column.
-// ==============================================================================
+// Add grid HTML to single product image and text content
 add_action('woocommerce_before_single_product_summary', function () {
     global $product;
-    
-    // Default image column classes
-    $img_cols = 'col-md-5'; 
+    $img_cols = 'col-md-5'; // Default for non-composite
 
     // Check if the product object exists and is a composite product
     if ( is_a( $product, 'WC_Product' ) && $product->is_type( 'composite' ) ) {
-        // Image column is col-12 on mobile, col-md-4 on medium/up, with no offset.
-        $img_cols = 'col-12 col-md-4'; 
+        $img_cols = 'col-md-4'; // Change to col-md-4 for composite
     }
 
-    // --- Open the HTML Structure ---
     ?>
     <div class="section">
         <div class="row">
-            
             <div class="<?php echo $img_cols; ?>">
     <?php
 }, 1);
 
-// ==============================================================================
-// 2. UPDATED: Close Image Column, Open Description Column, Open Text Summary Column
-// This runs after the product image has rendered.
-// ==============================================================================
 add_action('woocommerce_before_single_product_summary', function () {
     global $product;
-    
-    // Default text column classes
-    $text_cols = 'col-md-6 offset-md-1'; 
-    $description_column_html = '';
+    $text_cols = 'col-md-6 offset-md-1'; // Default for non-composite (5 + 1 + 6 = 12)
 
     // Check if the product object exists and is a composite product
     if ( is_a( $product, 'WC_Product' ) && $product->is_type( 'composite' ) ) {
-        
-        // 1. Define the Description Column (Right side of the image)
-        // col-12 on mobile, col-md-6 on desktop, with offset-md-2 
-        $description_column_html = '
-            <div class="col-12 col-md-6 offset-md-2 build-a-box-description">
-                <h2 class="h3">Build Your Perfect Box</h2>
-                <p>Curate a custom selection of our finest handmade chocolates. Choose from truffles, caramels, and unique creations to craft a truly personalized gift.</p>
-                <p>Start picking your favorites below—your perfect chocolate journey awaits!</p>
-            </div>
-        ';
-        
-        // 2. The standard product summary text (for composite) should be full width below everything.
-        // We set the text_cols to full width col-12 here, but we insert the HTML below.
-        $text_cols = 'col-12'; 
+        $text_cols = 'col-md-7 offset-md-1'; // Change to col-md-7 for composite (4 + 7 + 1 = 12)
     }
 
     ?>
-            </div> <?php 
-            // INSERT THE DESCRIPTION COLUMN NEXT TO THE IMAGE COLUMN
-            echo $description_column_html; 
-            ?>
-
+            </div>
             <div class="<?php echo $text_cols; ?>">
     <?php
-}, 50); // Using priority 50.
+}, 999);
 
-// ==============================================================================
-// 3. UPDATED: Close the Row and Section Containers
-// ==============================================================================
 add_action('woocommerce_after_single_product_summary', function () {
-    // The standard WooCommerce product summary content will render here.
     ?>
-            </div> </div> </div> <?php
+            </div>
+        </div>
+    </div>
+    <?php
 }, 1);
 
 // Add section HTML to upsells ("You may also like")
