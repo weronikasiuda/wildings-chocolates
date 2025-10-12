@@ -1,0 +1,14 @@
+.woocommerce-notices-wrapper {
+
+    .woocommerce-message {
+        border-top-color: $primary;
+    }
+
+    .woocommerce-message::before {
+        color: $primary;
+    }
+
+    .woocommerce-message .wc-forward {
+        margin-top: spacer();
+    }
+}

@@ -1,0 +1,11 @@
+.post-meta {
+    @include font-size($font-size-sm);
+
+    &:not(:first-child) {
+        margin-top: spacer();
+    }
+
+    &:not(:last-child) {
+        margin-bottom: spacer();
+    }
+}

@@ -1,0 +1,51 @@
+/* Style quantity input spinner arrows on all WooCommerce product pages */
+.woocommerce .quantity input[type="number"] {
+    // padding-right: 30px;
+    /* Make room for wider spinner */
+}
+
+.woocommerce .quantity input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300384A'%3E%3Cpath d='M7 14l5-5 5 5z'/%3E%3C/svg%3E") no-repeat center 8%,
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300384A'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E") no-repeat center 92%,
+        $light;
+
+    background-size: 16px 16px, 16px 16px, 100% 100%;
+    width: 28px;
+    height: 100%;
+    opacity: 1;
+    cursor: pointer;
+    margin: 0;
+    transition: all 0.2s ease;
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    bottom: 1px;
+}
+
+.woocommerce .quantity input[type="number"]::-webkit-inner-spin-button:hover {
+    background-color: $primary;
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FCF0E5'%3E%3Cpath d='M7 14l5-5 5 5z'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FCF0E5'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-position: center 8%, center 92%;
+}
+
+/* Make sure the quantity container allows positioning */
+.woocommerce .quantity {
+    position: relative;
+    display: inline-block;
+    margin-bottom: spacer(1.5) !important;
+}
+
+/* Hide outer spin button to prevent conflicts */
+.woocommerce .quantity input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox fallback - leave default arrows */
+.woocommerce .quantity input[type="number"] {
+    -moz-appearance: initial;
+}

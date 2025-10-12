@@ -1,0 +1,15 @@
+.embed-code {
+
+    &__wrap {
+        @extend .container;
+    }
+
+    &__row {
+        @extend .row;
+    }
+
+    &__column {
+        @extend .col-12;
+    }
+
+}

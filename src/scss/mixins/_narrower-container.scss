@@ -1,0 +1,56 @@
+// A mixin to create the reusable narrower container styles.
+@mixin narrower-container {
+    // Define the variable for the difference here.
+    $narrow-difference: 100px;
+
+    // Apply default container styles for all devices up to 'lg'.
+    @include media-breakpoint-up(xs) {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    // Apply narrower container styles for all devices 'lg' and up.
+    // The `lg` breakpoint is where we start the narrower container.
+    @include media-breakpoint-up(lg) {
+        // Use the max-width from the map for the 'lg' breakpoint
+        $lg-width: map-get($container-max-widths, lg);
+        max-width: $lg-width - $narrow-difference;
+    }
+
+    // Continue to apply the narrower styles for larger breakpoints
+
+    @include media-breakpoint-up(lg3) {
+        max-width: map-get($container-max-widths, lg3) - $narrow-difference;
+    }
+
+    @include media-breakpoint-up(lg4) {
+        max-width: map-get($container-max-widths, lg4) - $narrow-difference;
+    }
+
+    @include media-breakpoint-up(lg5) {
+        max-width: map-get($container-max-widths, lg5) - $narrow-difference;
+    }
+
+    @include media-breakpoint-up(lg6) {
+        max-width: map-get($container-max-widths, lg6) - $narrow-difference;
+    }
+
+    @include media-breakpoint-up(xl) {
+        max-width: map-get($container-max-widths, xl) - $narrow-difference;
+    }
+
+    @include media-breakpoint-up(xl1) {
+        max-width: map-get($container-max-widths, xl1) - $narrow-difference;
+    }
+
+    @include media-breakpoint-up(xxl) {
+        max-width: map-get($container-max-widths, xxl) - $narrow-difference;
+    }
+
+    @include media-breakpoint-up(xxxl) {
+        max-width: map-get($container-max-widths, xxxl) - $narrow-difference;
+    }
+}

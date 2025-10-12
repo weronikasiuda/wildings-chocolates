@@ -1,0 +1,7 @@
+.woocommerce .checkout-button.checkout-button.checkout-button.checkout-button {
+    @extend .btn;
+    @extend .btn-primary;
+    @extend .btn-lg;
+
+    display: block;
+}

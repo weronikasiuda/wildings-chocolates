@@ -1,0 +1,24 @@
+// Mixin to change the font color depending on the bg color of its parent
+@mixin theme-color-mixin {
+
+    @each $color-name,
+    $color-value in $theme-colors {
+        .bg-#{$color-name} & {
+            @if $color-name =="primary" {
+                color: $light;
+            }
+
+            @else if $color-name =="secondary" {
+                color: $dark;
+            }
+
+            @else if $color-name =="tertiary" {
+                color: $dark;
+            }
+
+            @else {
+                color: $dark // Default if none of the above conditions match
+            }
+        }
+    }
+}

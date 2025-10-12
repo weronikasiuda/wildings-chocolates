@@ -1,0 +1,39 @@
+.mc4wp-form {
+    margin: 2rem 0;
+
+    .mc4wp-form-fields {
+        @extend .col-10;
+        @extend .offset-1;
+        @extend .col-sm5-8;
+        @extend .offset-sm5-2;
+        @extend .col-lg-6;
+        @extend .offset-lg-3;
+
+        .field-row {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .field-label {
+            margin-bottom: 0.25rem;
+        }
+
+        .field-email {
+            background-color: $very-light-gray;
+            border: none;
+            height: 36px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 10px;
+
+            &::placeholder {
+                color: $tertiary;
+            }
+        }
+
+        .field-btn {
+            @extend .btn;
+            @extend .btn-secondary;
+
+            margin-top: 1rem;
+        }
+    }
+}

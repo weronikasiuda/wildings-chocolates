@@ -1,0 +1,24 @@
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+    background-color: lighten($tertiary, 20%);
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+    background-color: $tertiary;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li a,
+.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover,
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active a,
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active a:hover {
+    color: $primary;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li::before,
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active::before {
+    box-shadow: 2px 2px 0 $light;
+}
+
+.woocommerce #review_form #respond .form-submit input {
+    @extend .btn;
+    @extend .btn-primary;
+}

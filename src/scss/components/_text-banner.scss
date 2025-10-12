@@ -1,0 +1,32 @@
+.text-banner {
+
+    @include padding-y(spacer(3));
+    background-size: contain;
+
+
+    &__wrap {
+        @extend .container;
+    }
+
+    &__row {
+        @extend .row;
+    }
+
+    &__column {
+        @extend .col-12;
+
+        &--half-size {
+            @extend .col-md-10;
+            @extend .offset-md-1;
+        }
+    }
+
+    &__text-wrap {
+        text-align: center;
+    }
+
+    &__heading {
+        margin-bottom: 1.5rem;
+        font-family: $font-family-base;
+    }
+}

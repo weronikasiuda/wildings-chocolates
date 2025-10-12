@@ -1,0 +1,120 @@
+@mixin theme-button-colors-mixin {
+
+    @each $color-name,
+    $color-value in $theme-colors {
+        .bg-#{$color-name} & {
+            @if $color-name =="primary" {
+                background-color: $tertiary;
+                color: $primary;
+
+                svg {
+                    fill: $primary;
+                    stroke: $primary;
+                }
+
+                &:hover {
+                    background-color: $primary  !important;
+                    color: $tertiary  !important;
+                    border: 1px solid $tertiary;
+                    box-shadow: none;
+
+                    svg {
+                        fill: $tertiary  !important;
+                        stroke: $tertiary  !important;
+                    }
+                }
+            }
+
+            @else if $color-name =="secondary" {
+                background-color: $primary;
+                color: $secondary;
+
+                svg {
+                    fill: $secondary;
+                    stroke: $secondary;
+                }
+
+                &:hover {
+                    background: $secondary  !important;
+                    color: $primary  !important;
+                    border: 1px solid $primary;
+                    box-shadow: none;
+
+                    svg {
+                        fill: $primary  !important;
+                        stroke: $primary  !important;
+                    }
+                }
+
+            }
+
+            @else if $color-name =="light" {
+                background-color: $primary;
+                color: $light;
+
+                svg {
+                    fill: $light;
+                    stroke: $light;
+                }
+
+                &:hover {
+                    background: $light  !important;
+                    color: $primary  !important;
+                    border: 1px solid $primary;
+                    box-shadow: none;
+
+                    svg {
+                        fill: $primary  !important;
+                        stroke: $primary  !important;
+                    }
+                }
+
+            }
+
+            @else if $color-name =="lighter" {
+                background-color: $primary;
+                color: $lighter;
+
+                svg {
+                    fill: $lighter;
+                    stroke: $lighter;
+                }
+
+                &:hover {
+                    background: $lighter  !important;
+                    color: $primary  !important;
+                    border: 1px solid $primary;
+                    box-shadow: none;
+
+                    svg {
+                        fill: $primary  !important;
+                        stroke: $primary  !important;
+                    }
+                }
+
+            }
+
+            @else {
+                background-color: $primary;
+                color: $tertiary;
+
+                svg {
+                    fill: $tertiary;
+                    stroke: $tertiary;
+                }
+
+                &:hover {
+                    background: $tertiary  !important;
+                    color: $primary  !important;
+                    border: 1px solid $primary;
+                    box-shadow: none;
+
+                    svg {
+                        fill: $primary  !important;
+                        stroke: $primary  !important;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,243 @@
+@import url("./fonts/fonts.scss");
+html::after {
+  background: #eee;
+  bottom: 0;
+  color: #000;
+  font-family: monospace, monospace;
+  font-size: 10px;
+  font-weight: normal;
+  line-height: 1.5;
+  padding: 5px 10px;
+  position: fixed;
+  right: 0;
+  z-index: 9999;
+}
+@media (max-width: 389.98px) {
+  html::after {
+    background: hsl(0, 100%, 75%);
+    content: "xs";
+  }
+}
+@media (min-width: 390px) and (max-width: 404.98px) {
+  html::after {
+    background: hsl(9, 100%, 75%);
+    content: "xs2";
+  }
+}
+@media (min-width: 405px) and (max-width: 429.98px) {
+  html::after {
+    background: hsl(18, 100%, 75%);
+    content: "xs3";
+  }
+}
+@media (min-width: 430px) and (max-width: 449.98px) {
+  html::after {
+    background: hsl(27, 100%, 75%);
+    content: "xs4";
+  }
+}
+@media (min-width: 450px) and (max-width: 466.98px) {
+  html::after {
+    background: hsl(36, 100%, 75%);
+    content: "xs5";
+  }
+}
+@media (min-width: 467px) and (max-width: 499.98px) {
+  html::after {
+    background: hsl(45, 100%, 75%);
+    content: "xs6";
+  }
+}
+@media (min-width: 500px) and (max-width: 524.98px) {
+  html::after {
+    background: hsl(54, 100%, 75%);
+    content: "xs7";
+  }
+}
+@media (min-width: 525px) and (max-width: 539.98px) {
+  html::after {
+    background: hsl(63, 100%, 75%);
+    content: "xs8";
+  }
+}
+@media (min-width: 540px) and (max-width: 559.98px) {
+  html::after {
+    background: hsl(72, 100%, 75%);
+    content: "xs9";
+  }
+}
+@media (min-width: 560px) and (max-width: 574.98px) {
+  html::after {
+    background: hsl(81, 100%, 75%);
+    content: "xs10";
+  }
+}
+@media (min-width: 575px) and (max-width: 599.98px) {
+  html::after {
+    background: hsl(90, 100%, 75%);
+    content: "sm";
+  }
+}
+@media (min-width: 600px) and (max-width: 629.98px) {
+  html::after {
+    background: hsl(99, 100%, 75%);
+    content: "sm2";
+  }
+}
+@media (min-width: 630px) and (max-width: 664.98px) {
+  html::after {
+    background: hsl(108, 100%, 75%);
+    content: "sm3";
+  }
+}
+@media (min-width: 665px) and (max-width: 689.98px) {
+  html::after {
+    background: hsl(117, 100%, 75%);
+    content: "sm4";
+  }
+}
+@media (min-width: 690px) and (max-width: 714.98px) {
+  html::after {
+    background: hsl(126, 100%, 75%);
+    content: "sm5";
+  }
+}
+@media (min-width: 715px) and (max-width: 739.98px) {
+  html::after {
+    background: hsl(135, 100%, 75%);
+    content: "sm6";
+  }
+}
+@media (min-width: 740px) and (max-width: 767.98px) {
+  html::after {
+    background: hsl(144, 100%, 75%);
+    content: "sm7";
+  }
+}
+@media (min-width: 768px) and (max-width: 789.98px) {
+  html::after {
+    background: hsl(153, 100%, 75%);
+    content: "md";
+  }
+}
+@media (min-width: 790px) and (max-width: 814.98px) {
+  html::after {
+    background: hsl(162, 100%, 75%);
+    content: "md2";
+  }
+}
+@media (min-width: 815px) and (max-width: 839.98px) {
+  html::after {
+    background: hsl(171, 100%, 75%);
+    content: "md3";
+  }
+}
+@media (min-width: 840px) and (max-width: 864.98px) {
+  html::after {
+    background: hsl(180, 100%, 75%);
+    content: "md4";
+  }
+}
+@media (min-width: 865px) and (max-width: 887.98px) {
+  html::after {
+    background: hsl(189, 100%, 75%);
+    content: "md5";
+  }
+}
+@media (min-width: 888px) and (max-width: 909.98px) {
+  html::after {
+    background: hsl(198, 100%, 75%);
+    content: "md6";
+  }
+}
+@media (min-width: 910px) and (max-width: 933.98px) {
+  html::after {
+    background: hsl(207, 100%, 75%);
+    content: "md7";
+  }
+}
+@media (min-width: 934px) and (max-width: 954.98px) {
+  html::after {
+    background: hsl(216, 100%, 75%);
+    content: "md8";
+  }
+}
+@media (min-width: 955px) and (max-width: 976.98px) {
+  html::after {
+    background: hsl(225, 100%, 75%);
+    content: "md9";
+  }
+}
+@media (min-width: 977px) and (max-width: 991.98px) {
+  html::after {
+    background: hsl(234, 100%, 75%);
+    content: "md10";
+  }
+}
+@media (min-width: 992px) and (max-width: 1023.98px) {
+  html::after {
+    background: hsl(243, 100%, 75%);
+    content: "lg";
+  }
+}
+@media (min-width: 1024px) and (max-width: 1069.98px) {
+  html::after {
+    background: hsl(252, 100%, 75%);
+    content: "lg2";
+  }
+}
+@media (min-width: 1070px) and (max-width: 1104.98px) {
+  html::after {
+    background: hsl(261, 100%, 75%);
+    content: "lg3";
+  }
+}
+@media (min-width: 1105px) and (max-width: 1129.98px) {
+  html::after {
+    background: hsl(270, 100%, 75%);
+    content: "lg4";
+  }
+}
+@media (min-width: 1130px) and (max-width: 1159.98px) {
+  html::after {
+    background: hsl(279, 100%, 75%);
+    content: "lg5";
+  }
+}
+@media (min-width: 1160px) and (max-width: 1199.98px) {
+  html::after {
+    background: hsl(288, 100%, 75%);
+    content: "lg6";
+  }
+}
+@media (min-width: 1200px) and (max-width: 1299.98px) {
+  html::after {
+    background: hsl(297, 100%, 75%);
+    content: "xl";
+  }
+}
+@media (min-width: 1300px) and (max-width: 1439.98px) {
+  html::after {
+    background: hsl(306, 100%, 75%);
+    content: "xl1";
+  }
+}
+@media (min-width: 1440px) and (max-width: 1599.98px) {
+  html::after {
+    background: hsl(315, 100%, 75%);
+    content: "xxl";
+  }
+}
+@media (min-width: 1600px) and (max-width: 2099.98px) {
+  html::after {
+    background: hsl(324, 100%, 75%);
+    content: "xxxl";
+  }
+}
+@media (min-width: 2100px) {
+  html::after {
+    background: hsl(333, 100%, 75%);
+    content: "xxxxl";
+  }
+}
+/*# sourceMappingURL=debug.css.map */

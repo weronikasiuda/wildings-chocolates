@@ -1,0 +1,83 @@
+.widget-box {
+    @include transition-colors;
+
+    $block: &;
+
+    background: $primary;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: inherit;
+
+    &[href]:hover {
+        background: $primary-hover-bg;
+        color: $light;
+        text-decoration: inherit;
+    }
+
+    &--primary {
+        background: $primary;
+        color: $light;
+
+        &[href]:hover {
+            background: $primary;
+            color: $light;
+        }
+    }
+
+    &--tertiary {
+        background: $tertiary;
+        color: $primary;
+
+        &[href]:hover {
+            background: $tertiary;
+            color: $primary;
+        }
+    }
+
+    &--secondary {
+        background: $secondary;
+        color: $primary;
+
+        &[href]:hover {
+            background: $teal-hover;
+            color: $primary;
+        }
+    }
+
+    &--light {
+        background: $light;
+        color: $primary;
+
+        &[href]:hover {
+            background: darken($light, 10%);
+            color: $primary;
+        }
+    }
+
+    &__image-section {}
+
+    &__image {
+        aspect-ratio: 3 / 2;
+        display: block;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    &__text-section {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        font-weight: $font-weight-bold;
+        padding: spacer();
+    }
+
+    &__main {
+        flex-grow: 1;
+    }
+
+    &__more {
+        margin-top: spacer();
+    }
+}

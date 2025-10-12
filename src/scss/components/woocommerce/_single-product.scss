@@ -1,0 +1,246 @@
+.single-product.single-product.single-product.single-product {
+    .onsale.onsale.onsale.onsale {
+        @include sale-badge;
+
+        top: spacer(-0.25);
+        left: spacer(-0.25);
+    }
+
+    .woocommerce-product-gallery {
+        float: none;
+        width: auto;
+
+        @include media-breakpoint-up(md) {
+            margin-bottom: 0;
+        }
+    }
+
+    .ac-wc-product-thumbnails {
+        margin-top: spacer();
+    }
+
+    .ac-wc-product-thumbnails__wrap {
+        display: flex;
+        flex-wrap: wrap;
+        margin: spacer(-0.5);
+    }
+
+    .ac-wc-product-thumbnails .woocommerce-product-gallery__image {
+        margin: spacer(0.5);
+        width: calc(25% - #{spacer()});
+    }
+
+    .summary {
+        float: none;
+        width: auto;
+
+        @include media-breakpoint-up(md) {
+            margin-bottom: 0;
+        }
+    }
+
+    .sku_wrapper {
+        @include font-size($font-size-sm);
+
+        color: $secondary;
+        display: block;
+        font-weight: $font-weight-bold;
+        margin-bottom: spacer(0.25);
+        text-transform: uppercase;
+    }
+
+    .product_title {
+        @extend .h2;
+
+        margin-bottom: spacer(0.25);
+    }
+
+    .price {
+        @include font-size($font-size-xl);
+
+        color: inherit;
+        display: block;
+        font-weight: inherit;
+        margin-bottom: spacer(0.25);
+    }
+
+    .price del {
+        color: $red;
+        font-size: inherit;
+        font-weight: inherit;
+        opacity: 1;
+        margin-right: 0.5em;
+        text-decoration: line-through;
+    }
+
+    .price ins {
+        color: inherit;
+        font-weight: inherit;
+        text-decoration: none;
+    }
+
+    .stock {
+        @include font-size($font-size-sm);
+
+        display: block;
+        margin-bottom: spacer(0.25);
+    }
+
+    .out-of-stock {
+        color: $red;
+    }
+
+    .available-on-backorder {
+        color: inherit;
+    }
+
+    .woocommerce-product-details__short-description,
+    .variations,
+    .single_variation,
+    .cart {
+        &:not(:first-child) {
+            margin-top: spacer();
+        }
+
+        &:not(:last-child) {
+            margin-bottom: spacer();
+        }
+    }
+
+    .variations .label {
+        padding: 0 spacer(0.5) 0 0;
+    }
+
+    .variations label {
+        @include font-size($font-size-sm);
+    }
+
+    .variations .value {
+        padding: 0;
+    }
+
+    .variations select {
+        @extend .form-select;
+        @extend .form-select-sm;
+
+        margin-right: 0;
+    }
+
+    .variations tr:not(:last-child) th,
+    .variations tr:not(:last-child) td {
+        padding-bottom: spacer(0.5);
+    }
+
+    .product-type-simple .cart .quantity,
+    .product-type-variable .cart .quantity {
+        margin-right: spacer(0.5);
+    }
+
+    .product-type-simple .cart .qty,
+    .product-type-variable .cart .qty {
+        @extend .form-control;
+    }
+
+    .button {
+        @extend .btn;
+        @extend .btn-primary;
+    }
+
+    .group_table {
+        &:not(:last-child) {
+            margin-bottom: spacer();
+        }
+    }
+
+    .group_table td {
+        padding: 0;
+    }
+
+    .group_table tr:not(:last-child) td {
+        padding-bottom: spacer(0.25);
+    }
+
+    .group_table .qty {
+        @extend .form-select;
+        @extend .form-select-sm;
+    }
+
+    .group_table .woocommerce-grouped-product-list-item__label {
+        padding: {
+            top: 0.25em;
+            left: spacer(0.5);
+            right: spacer(0.5);
+        }
+    }
+
+    .group_table .woocommerce-grouped-product-list-item__price {
+        padding-top: 0.25em;
+
+        del {
+            color: $red;
+            margin-right: spacer(0.25);
+            text-decoration: line-through;
+        }
+
+        ins {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+
+    .group_table .stock {
+        @include font-size($font-size-sm);
+
+        display: block;
+        margin: 0;
+    }
+
+    .group_table .out-of-stock {
+        color: $red;
+    }
+
+    .product_meta {
+        @include font-size($font-size-sm);
+
+        margin: 0;
+
+        &:not(:first-child) {
+            margin-top: spacer();
+        }
+    }
+
+    .wc-tab>h2 {
+        @extend .h3;
+    }
+
+    .wc-tab .shop_attributes {
+        border: {
+            color: $light-gray;
+            style: solid;
+            width: $border-width 0;
+        }
+    }
+
+    .wc-tab .shop_attributes th,
+    .wc-tab .shop_attributes td {
+        background: transparent;
+        padding: spacer(0.25) spacer(0.5);
+    }
+
+    .wc-tab .shop_attributes tr:nth-child(2n) th,
+    .wc-tab .shop_attributes tr:nth-child(2n) td {
+        background: $very-light-gray;
+    }
+
+    .wc-tab .shop_attributes td {
+        font-style: inherit;
+    }
+
+    .products.related>h2,
+    .products.upsells>h2 {
+        @extend .h1;
+
+        margin-bottom: spacer(2);
+        text-align: center;
+    }
+}

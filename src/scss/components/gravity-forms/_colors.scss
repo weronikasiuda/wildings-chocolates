@@ -1,0 +1,37 @@
+.gform-theme--framework,
+.gform-theme--api {
+    --gform-theme-color-danger: $red;
+    --gform-theme-color-danger-rgb: 167, 357, 0;
+
+    --gform-theme-field-page-progress-bar-background-color-red: $red;
+    --gform-theme-field-password-strength-color-mismatch: $red;
+    --gform-theme-field-password-strength-color-short: $red;
+}
+
+.gform_wrapper.gravity-theme .gfield_creditcard_warning .gfield_creditcard_warning_message,
+.gform_wrapper.gravity-theme .gfield_error .gfield_repeater_cell label,
+.gform_wrapper.gravity-theme .gfield_error label,
+.gform_wrapper.gravity-theme .gfield_error legend,
+.gform_wrapper.gravity-theme .gfield_required,
+.gform_wrapper.gravity-theme .gfield_validation_message,
+.gform_wrapper.gravity-theme .gform_validation_errors > h2,
+.gform_wrapper.gravity-theme .gform_validation_errors > ol a,
+.gform_wrapper.gravity-theme .gform_validation_errors > ol li,
+.gform_wrapper.gravity-theme .validation_error,
+.gform_wrapper.gravity-theme .validation_message,
+.gform_wrapper.gravity-theme [aria-invalid="true"] + label,
+.gform_wrapper.gravity-theme label + [aria-invalid="true"] {
+    color: $red !important;
+}
+
+.gform_wrapper.gravity-theme .gfield_creditcard_warning .gfield_creditcard_warning_message span,
+.gform_wrapper.gravity-theme .gfield_creditcard_warning .gfield_creditcard_warning_message span,
+.gform_wrapper.gravity-theme .gfield_creditcard_warning,
+.gform_wrapper.gravity-theme .gfield_creditcard_warning,
+.gform_wrapper.gravity-theme .gfield_error [aria-invalid="true"],
+.gform_wrapper.gravity-theme .gfield_validation_message,
+.gform_wrapper.gravity-theme .gform_validation_errors,
+.gform_wrapper.gravity-theme .validation_error,
+.gform_wrapper.gravity-theme .validation_message {
+    border-color: $red !important;
+}

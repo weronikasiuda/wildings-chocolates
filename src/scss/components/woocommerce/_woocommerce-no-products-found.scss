@@ -1,0 +1,10 @@
+.woocommerce-info {
+    border-top-color: $primary;
+    background-color: $white;
+    color: $primary;
+    border-top: 3px solid $secondary;
+}
+
+.woocommerce-info::before {
+    color: $primary;
+}

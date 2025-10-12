@@ -1,0 +1,12 @@
+.wt-cli-cookie-bar-container {
+    #cookie-law-info-again {
+        background: $tertiary  !important;
+        border-radius: $border-radius $border-radius 0 0;
+        box-shadow: 0 0 spacer(0.5) rgba($black, 0.25);
+        color: $black  !important;
+        font-family: inherit;
+        font-weight: $font-weight-bold;
+        font-size: $font-size-sm;
+        padding: 0.5em 1em !important;
+    }
+}

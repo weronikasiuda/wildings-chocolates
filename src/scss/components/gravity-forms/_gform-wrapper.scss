@@ -1,0 +1,33 @@
+.gform_wrapper.gform_wrapper.gform_wrapper.gform_wrapper {
+    h3 {
+        margin: {
+            bottom: 0;
+        }
+    }
+
+    .gf_progressbar_title {
+        color: inherit !important;
+    }
+
+    .gf_progressbar_percentage {
+        background-color: $primary !important;
+    }
+
+    .gf_progressbar {
+        background-color: rgba($black, 0.1) !important;
+    }
+
+    .button {
+        @extend .btn;
+
+        margin-bottom: 0;
+    }
+
+    .button:not(.gform-theme-button--secondary) {
+        @extend .btn-primary;
+    }
+
+    .gform-theme-button--secondary {
+        @extend .btn-outline-primary;
+    }
+}

@@ -1,0 +1,6 @@
+// Return a multiple of the spacer variable.
+@function spacer($factor: 1) {
+    $spacer: 1.5rem !default;
+
+    @return $factor * $spacer;
+}

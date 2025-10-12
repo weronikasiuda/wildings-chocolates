@@ -1,0 +1,13 @@
+.accordion {
+    &__wrap {
+        @extend .container;
+    }
+
+    &__grid {
+        @extend .row;
+    }
+
+    &__column {
+        @extend .col-12;
+    }
+}

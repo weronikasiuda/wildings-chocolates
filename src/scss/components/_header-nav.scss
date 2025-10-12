@@ -1,0 +1,237 @@
+.header-nav {
+    $nav-active-border-color: $primary;
+    $nav-active-border-width: 2px;
+
+    $nav-sub-toggle-link-size: 40px;
+    $nav-sub-toggle-icon-size: 24px;
+
+    $nav-link-color: $link-color;
+    $nav-link-hover-color: $link-hover-color;
+
+    $nav-link-color-mobile: $primary;
+    $nav-link-hover-color-mobile: $nav-link-color-mobile;
+
+    $nav-link-bg: transparent;
+    $nav-link-hover-bg: null;
+
+    width: 100%;
+
+    &__list {
+        margin: 0;
+        padding: 0;
+
+        @include media-breakpoint-up($nav-breakpoint-expand) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+
+        @include media-breakpoint-up($nav-breakpoint-expand) {
+            align-items: center;
+        }
+
+        &:nth-child(n+2) {
+            @include media-breakpoint-down($nav-breakpoint-expand) {
+                border-top: $border-width solid $border-color;
+            }
+        }
+    }
+
+    &__link {
+        @include transition-colors;
+
+        color: $nav-link-color;
+        display: block;
+        position: relative;
+        text-decoration: none;
+        text-align: center;
+
+        @include media-breakpoint-down($nav-breakpoint-expand) {
+            color: $nav-link-color-mobile;
+            background-color: $nav-link-bg;
+            padding: spacer(0.5);
+            width: 100%;
+        }
+
+        // @include media-breakpoint-up($nav-breakpoint-expand) {
+        //     height: 45px;
+        //     line-height: 45px;
+        // }
+
+        &:nth-last-child(3):first-child {
+            @include media-breakpoint-down($nav-breakpoint-expand) {
+                width: calc(100% - #{$nav-sub-toggle-link-size});
+            }
+        }
+
+        &--active {
+            @include media-breakpoint-down($nav-breakpoint-expand) {
+                // border-left: $nav-active-border-width solid $nav-active-border-color;
+                // padding-left: calc(#{spacer(0.5)} - #{$nav-active-border-width});
+                font-weight: $font-weight-bold;
+            }
+
+            @include media-breakpoint-up($nav-breakpoint-expand) {
+                border-bottom: $nav-active-border-width solid $nav-active-border-color;
+            }
+        }
+
+        &:hover {
+            color: $nav-link-hover-color;
+            text-decoration: none;
+
+            @include media-breakpoint-down($nav-breakpoint-expand) {
+                background-color: $nav-link-hover-bg;
+            }
+        }
+    }
+
+    &__sub-toggle {
+        @include transition-colors;
+
+        background: transparent;
+        border: 0;
+        color: $nav-link-color;
+        padding: 0;
+
+        @include media-breakpoint-down($nav-breakpoint-expand) {
+            background-color: $nav-link-bg;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            width: $nav-sub-toggle-link-size;
+        }
+
+        @include media-breakpoint-up($nav-breakpoint-expand) {
+            border-radius: 999px;
+            margin-left: spacer(0.125);
+        }
+
+        &--visible {
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+
+        &:hover {
+            @include media-breakpoint-down($nav-breakpoint-expand) {
+                background-color: $nav-link-hover-bg;
+                color: $nav-link-hover-color;
+            }
+
+            @include media-breakpoint-up($nav-breakpoint-expand) {
+                background-color: $nav-link-color;
+                color: $body-bg;
+            }
+        }
+
+        svg {
+            display: block;
+            fill: currentColor;
+            height: $nav-sub-toggle-icon-size;
+            width: $nav-sub-toggle-icon-size;
+        }
+    }
+
+    &__sub-list {
+        display: none;
+        margin: 0;
+        padding: 0;
+
+        @include media-breakpoint-down($nav-breakpoint-expand) {
+            @include font-size($font-size-sm);
+
+            width: 100%;
+
+            margin: {
+                left: spacer(0.5);
+                right: spacer(0.5);
+                bottom: spacer(0.5);
+            }
+        }
+
+        @include media-breakpoint-up($nav-breakpoint-expand) {
+            background: $body-bg;
+            box-shadow: $box-shadow;
+            left: 0;
+            min-width: 100%;
+            position: absolute;
+            top: 100%;
+            z-index: 200;
+        }
+
+        &--visible {
+            display: block;
+        }
+
+        &--overflow {
+            @include media-breakpoint-up($nav-breakpoint-expand) {
+                left: auto;
+                right: 0;
+            }
+        }
+    }
+
+    &__sub-item {
+        display: block;
+        padding: 0.5rem 0;
+        border-top: $border-width solid $secondary;
+
+        &:nth-child(n+2) {
+            @include media-breakpoint-up($nav-breakpoint-expand) {
+                padding: 0;
+                border-top: $border-width solid $border-color;
+            }
+        }
+    }
+
+    &__sub-link {
+        @include transition-colors;
+
+        color: $nav-link-color;
+        display: inline-block;
+        width: 100%;
+        text-decoration: none;
+
+        @include media-breakpoint-up($nav-breakpoint-expand) {
+            background-color: $nav-link-bg;
+            display: block;
+            white-space: nowrap;
+
+            padding: {
+                top: spacer(0.5);
+                bottom: spacer(0.5);
+                left: spacer(0.5);
+                right: spacer();
+            }
+        }
+
+        &--active {
+            @include media-breakpoint-down($nav-breakpoint-expand) {
+                border-left: $nav-active-border-width solid $nav-active-border-color;
+                padding-left: calc(#{spacer(0.5)} - #{$nav-active-border-width});
+                margin-left: -1 * spacer(0.5);
+            }
+
+            @include media-breakpoint-up($nav-breakpoint-expand) {
+                border-left: $nav-active-border-width solid $nav-active-border-color;
+                padding-left: calc(#{spacer(0.5)} - #{$nav-active-border-width});
+            }
+        }
+
+        &:hover {
+            color: $nav-link-hover-color;
+            text-decoration: none;
+
+            @include media-breakpoint-up($nav-breakpoint-expand) {
+                background-color: $nav-link-hover-bg;
+            }
+        }
+    }
+}

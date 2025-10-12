@@ -1,0 +1,26 @@
+.woocommerce-MyAccount-navigation {
+    >ul {
+        @extend .subnav__list;
+    }
+
+    >ul>li {
+        @extend .subnav__item;
+    }
+
+    >ul>li>a {
+        @extend .subnav__link;
+    }
+
+    >ul>li.is-active>a {
+        &::before {
+            background: $primary;
+            content: "";
+            height: 10px;
+            left: 0;
+            margin-top: -5px;
+            position: absolute;
+            top: calc(#{spacer(0.5)} + #{0.5 * 1em * $line-height-base});
+            width: 10px;
+        }
+    }
+}

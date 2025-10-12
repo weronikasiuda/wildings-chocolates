@@ -1,0 +1,39 @@
+.image-grid {
+    $breakpoint-expand: sm;
+
+    &__wrap {
+        @extend .container;
+    }
+
+    &__row {
+        @extend .row;
+    }
+
+
+    &__item {
+        @extend .col-#{$breakpoint-expand}-6;
+
+        &:nth-child(n+2) {
+            @include media-breakpoint-down($breakpoint-expand) {
+                margin-top: $grid-gutter-width;
+            }
+        }
+
+        &:nth-child(n+3) {
+            @include media-breakpoint-up($breakpoint-expand) {
+                margin-top: $grid-gutter-width;
+            }
+        }
+    }
+
+    &__link {
+        display: block;
+    }
+
+    &__image {
+        aspect-ratio: 3 / 2;
+        display: block;
+        object-fit: cover;
+        width: 100%;
+    }
+}

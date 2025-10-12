@@ -1,0 +1,51 @@
+// Non-BEM WYSIWYG content
+.text-content {
+
+    >h1,
+    >h2,
+    >h3,
+    >h4,
+    >h5,
+    >h6 {
+        margin-bottom: spacer(0.5);
+
+        &:not(:first-child) {
+            margin-top: spacer();
+        }
+    }
+
+    > :last-child,
+    > :last-child> :last-child {
+        margin-bottom: 0;
+    }
+
+    img {
+        height: auto;
+        width: auto;
+        max-height: none;
+        max-width: 100%;
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    ul li {
+        background-image: url("../../images/icons/marker-secondary.svg");
+        background-repeat: no-repeat;
+        background-position: left 4px;
+        background-size: 1.2em;
+        padding-left: 1.75em;
+        margin-bottom: 0.8em;
+
+        &:not(:first-child) {
+            margin-bottom: spacer();
+        }
+
+        &::marker {
+            margin-top: 10px;
+        }
+    }
+
+}

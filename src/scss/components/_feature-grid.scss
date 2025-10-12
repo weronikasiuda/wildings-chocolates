@@ -1,0 +1,99 @@
+.feature-grid {
+    // Can customize breakpoints, column sizes, and column alignment with
+    // Bootstrap grid layout classes.
+    //
+    // See https://getbootstrap.com/docs/5.2/layout/grid/
+
+    $breakpoint-expand-2: sm; // 2 columns
+    $breakpoint-expand-3: md;
+    $text-column-size: 6;
+    $image-column-size: 11 - $text-column-size;
+
+    $block: &;
+
+    &__wrap {
+        @include narrower-container;
+    }
+
+    &__grid {
+        @extend .row;
+        @extend .gy-4;
+    }
+
+
+    &__image-section {
+        @extend .col-#{$breakpoint-expand-2}-12;
+        // @extend .offset-#{$breakpoint-expand-2}-2;
+        @extend .col-#{$breakpoint-expand-3}-#{$image-column-size};
+        @extend .offset-#{$breakpoint-expand-3}-0;
+
+        @at-root #{$block}--alt & {
+            @extend .order-#{$breakpoint-expand-3}-2;
+            @extend .offset-#{$breakpoint-expand-3}-1;
+        }
+
+    }
+
+    &__image {
+        display: block;
+        height: auto;
+        object-fit: cover;
+        width: 100%;
+
+        &--landscape {
+            aspect-ratio: 4 / 3;
+        }
+    }
+
+    &__text-section {
+        @extend .col-#{$breakpoint-expand-2}-12;
+        // @extend .offset-#{$breakpoint-expand-2}-2;
+        @extend .col-#{$breakpoint-expand-3}-#{$text-column-size};
+        @extend .offset-#{$breakpoint-expand-3}-1;
+
+        @at-root #{$block}--alt & {
+            @extend .order-#{$breakpoint-expand-3}-1;
+            @extend .offset-#{$breakpoint-expand-3}-0;
+        }
+
+        display: flex;
+        flex-direction: column;
+        gap: spacer(0.5);
+
+        @include media-breakpoint-up($breakpoint-expand-2) {
+            gap: spacer(0.65);
+        }
+    }
+
+    &__title {
+        @extend .section-title;
+    }
+
+    &__heading {
+        @extend .section-heading;
+        line-height: 1;
+
+        &--standalone {
+            margin-top: spacer(1.5);
+        }
+    }
+
+    &__text,
+    &__more {
+        &:not(:first-child) {
+            margin-top: spacer(0.66);
+
+            @include media-breakpoint-up($breakpoint-expand-3) {
+                margin-top: spacer(0.75);
+            }
+        }
+
+        &:not(:last-child) {
+            margin-bottom: spacer(0.66);
+
+            @include media-breakpoint-up($breakpoint-expand-3) {
+                margin-bottom: spacer(0.75);
+            }
+        }
+    }
+}

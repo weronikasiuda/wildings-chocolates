@@ -1,0 +1,6 @@
+.woocommerce-order-downloads {
+    .download-file .button.button.button.button {
+        @extend .btn;
+        @extend .btn-primary;
+    }
+}

@@ -1,0 +1,69 @@
+.story-card {
+    $block: &;
+
+    color: inherit;
+    display: block;
+    height: 100%;
+    padding-top: 24px;
+    position: relative;
+    text-decoration: inherit;
+
+    &[href]:hover {
+        color: inherit;
+        text-decoration: inherit;
+    }
+
+    &::before {
+        background: {
+            color: $blue;
+            image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"><path d="M5 2 3 6h3v6H0V6l2-4h3m8 0-2 4h3v6H8V6l2-4z" fill="%23fff"/></svg>');
+            position: center;
+            repeat: no-repeat;
+            size: 60%;
+        }
+
+        border-radius: 999px;
+        content: "";
+        height: 48px;
+        position: absolute;
+        width: 48px;
+        top: 0;
+        left: spacer();
+    }
+
+    &__box {
+        @include transition-colors;
+
+        background: $light;
+        border-radius: $border-radius-lg;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        padding: {
+            top: calc(#{spacer(0.5)} + 24px);
+            bottom: spacer();
+            left: spacer();
+            right: spacer();
+        }
+
+        @at-root #{$block}[href]:hover & {
+            background: $light-hover-bg;
+        }
+    }
+
+    &__main {
+        flex-grow: 1;
+    }
+
+    &__excerpt {
+        @include font-size($font-size-lg);
+
+        font-style: italic;
+        font-weight: $font-weight-bold;
+    }
+
+    &__more {
+        margin-top: spacer();
+    }
+}

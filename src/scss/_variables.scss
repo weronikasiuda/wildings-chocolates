@@ -1,0 +1,417 @@
+// Modules
+@use "sass:math";
+@use "sass:color";
+
+//Fonts
+@import url('./fonts/fonts.scss');
+
+// Colors
+$white: #fff;
+$gray: #BFBFBF;
+$black: #000;
+
+$gray-100: color.mix($white, $black, 10%);
+$gray-200: color.mix($white, $black, 20%);
+$gray-300: color.mix($white, $black, 30%);
+$gray-400: color.mix($white, $black, 40%);
+$gray-500: color.mix($white, $black, 50%);
+$gray-600: color.mix($white, $black, 60%);
+$gray-700: color.mix($white, $black, 70%);
+$gray-800: color.mix($white, $black, 80%);
+$gray-900: color.mix($white, $black, 90%);
+
+//Remove these START
+$blue: #2A3674;
+$red: #A72D33;
+$orange: #FF8C3E;
+$yellow: #F1B200;
+$green: #217B43;
+$teal: #009489;
+//Remove these END
+
+$light-gray: $gray-100;
+$very-light-gray: $gray-400;
+
+
+$creme: #F9EFEB;
+$beige: #D3C2A8;
+$brown-lighter: #652D1E;
+$brown: #2F120E;
+$off-black: #1F1F1F;
+
+
+// Theme colors
+$primary: $brown;
+$secondary: $brown-lighter;
+$secondary-lighter: rgba($secondary, 0.2);
+$tertiary: $beige;
+$success: $tertiary;
+$info: $tertiary;
+$warning: $yellow;
+$danger: $red;
+$light: $creme;
+$dark: $off-black;
+
+$theme-colors: (
+    'primary': $primary,
+    'secondary': $secondary,
+    'tertiary': $tertiary,
+    'success': $success,
+    'info': $info,
+    'warning': $warning,
+    'danger': $danger,
+    'light': $light,
+    'dark': $dark,
+    'cta': $orange,
+    'white': $white,
+);
+
+$social-colors: (
+    'facebook': $dark,
+    'linkedin': $dark,
+    'twitter': $dark,
+    'whatsapp': $dark,
+    'email': $dark,
+);
+
+$blue-hover: mix($white, $blue, 10%);
+$teal-hover: mix($white, $teal, 10%);
+$orange-hover: mix($white, $orange, 10%);
+// $light-blue-hover: mix($white, $light-blue, 10%);
+
+$primary-hover-bg: lighten($primary, 5%);
+$light-hover-bg: mix($white, $light, 20%);
+
+// Spacing
+$spacer: 1.5rem;
+
+// Body
+$body-bg: $light;
+$body-color: $primary;
+
+// Links
+$link-color: $primary;
+$link-hover-color: $link-color;
+$link-decoration: none;
+
+// Paragraphs
+$paragraph-margin-bottom: 1em;
+
+$grid-breakpoints: (
+    xs: 0,
+    xs2: 390px,
+    xs3: 405px,
+    xs4: 430px,
+    xs5: 450px,
+    xs6: 467px,
+    xs7: 500px,
+    xs8: 525px,
+    xs9: 540px,
+    xs10: 560px,
+    sm: 575px,
+    sm2: 600px,
+    sm3: 630px,
+    sm4: 665px,
+    sm5: 690px,
+    sm6: 715px,
+    sm7: 740px,
+    md: 768px,
+    md2:790px,
+    md3: 815px,
+    md4: 840px,
+    md5: 865px,
+    md6: 888px,
+    md7: 910px,
+    md8: 934px,
+    md9: 955px,
+    md10: 977px,
+    lg: 992px,
+    lg2: 1024px,
+    lg3: 1070px,
+    lg4: 1105px,
+    lg5: 1130px,
+    lg6: 1160px,
+    xl: 1200px,
+    xl1: 1300px,
+    xxl: 1440px,
+    xxxl: 1600px,
+    xxxxl: 2100px,
+);
+
+$container-max-widths: (
+    xs: 360px,
+    xs2: 365px,
+    xs3: 375px,
+    xs4: 400px,
+    xs5: 420px,
+    xs6: 437px,
+    xs7: 470px,
+    xs8: 495px,
+    xs9: 510px,
+    xs10: 530px,
+    sm: 545px,
+    sm2: 570px,
+    sm3: 600px,
+    sm4: 635px,
+    sm5: 660px,
+    sm6: 685px,
+    sm7: 710px,
+    md: 738px,
+    md2: 760px,
+    md3: 785px,
+    md4: 810px,
+    md5: 835px,
+    md6: 858px,
+    md7: 880px,
+    md8: 904px,
+    md9: 925px,
+    md10: 947px,
+    lg: 962px,
+    lg2: 994px,
+    lg3: 1040px,
+    lg4: 1075px,
+    lg5: 1100px,
+    lg6: 1130px,
+    xl: 1170px,
+    xl1: 1230px,
+    xxl: 1350px,
+    xxxl: 1400px,
+    xxxxl: 1440px
+);
+
+$grid-gutter-width: $spacer;
+
+// Animations
+$transition-duration: 200ms;
+
+// Components
+$border-width: 0.5px;
+$border-color: $primary;
+$border-color-light: $light;
+
+$border-radius: 0px;
+$border-radius-circle: 100%;
+$border-radius-sm: 4px;
+$border-radius-lg: 20px;
+
+$box-shadow: 0 0.25rem 1rem rgba($black, 0.15);
+$box-shadow-sm: 0 0.125rem 0.5rem rgba($black, 0.15);
+$box-shadow-lg: 0 0.5rem 1.5rem rgba($black, 0.15);
+
+// Font sizes
+$font-scale: 1.2;
+
+// $font-size-0: 1.125rem;
+$font-size-0: 1rem;
+$font-size-1: $font-size-0 * $font-scale;
+$font-size-2: $font-size-1 * $font-scale;
+$font-size-3: $font-size-2 * $font-scale;
+$font-size-4: $font-size-3 * $font-scale;
+$font-size-5: $font-size-4 * $font-scale;
+$font-size-6: $font-size-5 * 2;
+
+$font-size-minus-1: math.div($font-size-0, $font-scale);
+$font-size-minus-2: math.div($font-size-minus-1, $font-scale);
+
+$font-size-base: $font-size-0;
+
+$font-size-xs: $font-size-minus-2;
+$font-size-sm: $font-size-minus-1;
+$font-size-lg: $font-size-1;
+$font-size-xl: $font-size-2;
+
+// Typography
+$font-family-sans-serif: 'Didact Gothic', sans-serif;
+$font-family-monospace: monospace, monospace;
+$font-family-base: $font-family-sans-serif;
+$font-family-code: $font-family-monospace;
+$font-family-secondary: 'Caveat', cursive;
+$font-family-tertiary: 'Zodiak', serif;
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-quarterbold: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+$font-weight-theboldest: 900;
+
+$font-weight-lighter: $font-weight-light;
+$font-weight-bolder: $font-weight-extrabold;
+
+$font-weight-base: $font-weight-normal;
+$line-height-base: 1.25;
+
+$line-height-lg: 1.75;
+$line-height-sm: $line-height-base;
+
+$h1-font-size: $font-size-6;
+$h2-font-size: $font-size-4;
+$h3-font-size: $font-size-3;
+$h4-font-size: $font-size-2;
+$h5-font-size: $font-size-1;
+$h6-font-size: $font-size-0;
+
+$headings-margin-bottom: math.div($spacer, 2);
+$headings-font-family: $font-family-secondary;
+$headings-font-weight: $font-weight-base;
+$headings-line-height: $line-height-base;
+$headings-color: $primary;
+
+$display-font-sizes: (
+    1: $font-size-6,
+    2: $font-size-5,
+    3: $font-size-4,
+    4: $font-size-3,
+    5: $font-size-2,
+    6: $font-size-1,
+);
+
+$display-font-family: $headings-font-family;
+$display-font-weight: $headings-font-weight;
+$display-line-height: $headings-line-height;
+
+$lead-font-size: $font-size-lg;
+$lead-font-weight: null;
+
+$small-font-size: $font-size-sm;
+$sub-sup-font-size: $font-size-xs;
+
+// $text-muted: $secondary;
+
+// $blockquote-margin-y: $spacer;
+// $blockquote-font-size: $font-size-lg;
+// $blockquote-footer-color: null;
+// $blockquote-footer-font-size: $font-size-sm;
+
+// $hr-margin-y: $spacer;
+// $hr-border-color: $border-color;
+// $hr-border-width: $border-width;
+// $hr-opacity: 1;
+
+// $legend-margin-bottom: 0.5 * $spacer;
+// $legend-font-size: $font-size-lg;
+// $legend-font-weight: null;
+
+// $dt-font-weight: $font-weight-bold;
+
+// $list-inline-padding: 0.5 * $spacer;
+
+// Buttons and forms
+$input-btn-padding-y: 0.75rem;
+$input-btn-padding-x: 1.25rem;
+
+// $input-btn-font-family: null;
+$input-btn-font-size: $font-size-base;
+$input-btn-line-height: $line-height-base;
+
+$input-btn-padding-y-sm: 0.5rem;
+$input-btn-padding-x-sm: 0.75rem;
+$input-btn-font-size-sm: $font-size-sm;
+
+$input-btn-padding-y-lg: 0.75rem;
+$input-btn-padding-x-lg: 1.5rem;
+$input-btn-font-size-lg: $font-size-lg;
+// $input-btn-border-width: $border-width;
+
+$btn-padding-y: $input-btn-padding-y;
+$btn-padding-x: $input-btn-padding-x;
+
+// $btn-font-family: $input-btn-font-family;
+$btn-font-size: $input-btn-font-size;
+$btn-font-weight: $font-weight-base;
+$btn-line-height: $input-btn-line-height;
+
+
+// $btn-padding-y-sm: $input-btn-padding-y-sm;
+// $btn-padding-x-sm: $input-btn-padding-x-sm;
+// $btn-font-size-sm: $input-btn-font-size-sm;
+
+// $btn-padding-y-lg: $input-btn-padding-y-lg;
+// $btn-padding-x-lg: $input-btn-padding-x-lg;
+// $btn-font-size-lg: $input-btn-font-size-lg;
+
+$btn-border-width: 1px;
+
+$btn-border-radius: 0;
+$btn-border-radius-lg: $border-radius;
+$btn-border-radius-sm: $border-radius;
+
+// $btn-transition: color $transition-duration ease,
+//     background-color $transition-duration ease,
+//     border-color $transition-duration ease,
+//     box-shadow $transition-duration ease;
+
+// $input-padding-y: 0.75rem;
+// $input-padding-x: 0.75rem;
+
+// $input-font-family: $input-btn-font-family;
+// $input-font-size: $input-btn-font-size;
+// $input-font-weight: $font-weight-base;
+// $input-line-height: $input-btn-line-height;
+
+// $input-padding-y-sm: 0.5rem;
+// $input-padding-x-sm: 0.5rem;
+// $input-font-size-sm: $input-btn-font-size-sm;
+
+// $input-padding-y-lg: 0.5rem;
+// $input-padding-x-lg: 0.5rem;
+// $input-font-size-lg: $input-btn-font-size-lg;
+
+// $input-bg: $body-bg;
+$input-disabled-bg: $gray;
+
+// $input-color: $body-color;
+// $input-border-color: $border-color;
+// $input-border-width: $border-width;
+// $input-box-shadow: 0;
+
+// $input-border-radius: $border-radius-sm;
+// $input-border-radius-sm: $border-radius-sm;
+// $input-border-radius-lg: $border-radius-lg;
+
+// Accordion
+$accordion-border-radius: 0;
+$accordion-inner-border-radius: 0;
+$accordion-button-color: inherit;
+$accordion-button-bg: transparent;
+$accordion-button-active-color: inherit;
+$accordion-button-focus-border-color: $primary;
+$accordion-button-focus-box-shadow: none;
+$accordion-button-active-bg: transparent;
+$accordion-icon-width: 24px;
+
+$accordion-button-icon: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M17 13h-4v4h-2v-4H7v-2h4V7h2v4h4m-5-9A10 10 0 002 12a10 10 0 0010 10 10 10 0 0010-10A10 10 0 0012 2z" fill="#2F120E"/></svg>');
+$accordion-button-active-icon: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M17 13H7v-2h10m-5-9A10 10 0 002 12a10 10 0 0010 10 10 10 0 0010-10A10 10 0 0012 2z" fill="#652D1E"/></svg>');
+
+
+//Cards
+
+
+// Blockquote
+$blockquote-font-size: $font-size-lg;
+$blockquote-footer-font-size: $font-size-sm;
+
+// Dropdown
+$dropdown-padding-x: 0;
+$dropdown-padding-y: 0;
+$dropdown-box-shadow: $box-shadow;
+
+$dropdown-link-color: $body-color;
+$dropdown-link-hover-color: $body-color;
+$dropdown-link-hover-bg: rgba($secondary-lighter, 0.5);
+
+$dropdown-item-padding-y: spacer(0.5);
+$dropdown-item-padding-x: $input-btn-padding-x;
+
+// Custom variables
+$nav-breakpoint-expand: lg3;
+$text-decoration-thickness: 1.25px;
+
+$nav-button-section-size: 3rem;
+$nav-button-link-size: 3rem;
+$nav-button-icon-size: 2rem;
+
+$slider-icon-size-sm: 20px;
+$slider-icon-size: 24px;
+$slider-icon-color: $primary;

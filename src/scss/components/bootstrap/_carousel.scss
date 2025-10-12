@@ -1,0 +1,15 @@
+// Non-BEM Bootstrap 5 carousel
+// https://getbootstrap.com/docs/5.2/components/carousel/
+
+.carousel {
+    .carousel-image {
+        aspect-ratio: 3 / 2;
+        display: block;
+        object-fit: cover;
+        width: 100%;
+
+        @include media-breakpoint-up(xxl) {
+            max-height: 600px;
+        }
+    }
+}

@@ -1,0 +1,10 @@
+.section-title {
+    $breakpoint-expand: lg5;
+
+    display: inline-block;
+    font-size: $font-size-minus-1;
+    font-weight: $font-weight-base;
+    font-family: $font-family-base;
+    text-transform: uppercase;
+
+}

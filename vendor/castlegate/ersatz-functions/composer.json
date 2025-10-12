@@ -1,0 +1,11 @@
+{
+    "name": "castlegate/ersatz-functions",
+    "description": "PHP and WordPress functions",
+    "license": "MIT",
+    "autoload": {
+        "files": [
+            "functions.php",
+            "wordpress.php"
+        ]
+    }
+}

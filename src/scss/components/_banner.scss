@@ -1,0 +1,48 @@
+.banner {
+    $breakpoint-expand: $nav-breakpoint-expand;
+
+    @include padding-y(spacer());
+
+    @include media-breakpoint-up(sm) {
+        @include padding-y(spacer(1.5));
+    }
+
+    @include media-breakpoint-up(md) {
+        @include padding-y(spacer(2));
+    }
+
+    @include media-breakpoint-up(xxl) {
+        @include padding-y(spacer(2.5));
+    }
+
+    background-size: contain;
+    position: relative;
+
+    &::after {
+        background-color: rgba($primary, .7);
+        content: '';
+        display: inline-block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+    }
+
+
+    &__wrap {
+        @extend .container;
+    }
+
+    &__heading {
+        // font-size: ($h1-font-size * 1.35);
+        text-align: center;
+        position: relative;
+        z-index: 2;
+
+        color: $light;
+
+        margin: 0;
+    }
+}

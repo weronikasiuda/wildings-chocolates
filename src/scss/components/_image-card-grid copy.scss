@@ -1,0 +1,101 @@
+.image-card-grid {
+    $breakpoint-expand: lg;
+
+    &:not(:last-child) {
+        margin-top: spacer(4);
+        margin-bottom: spacer(2);
+    }
+
+    &__wrap {
+        @extend .container;
+    }
+
+    &__row {
+        @extend .row;
+
+        &:not(:last-child) {
+
+            @include media-breakpoint-up($nav-breakpoint-expand) {
+                margin-bottom: spacer(2);
+            }
+        }
+    }
+
+    &__section-title-wrap {
+        @extend .col-10;
+        text-align: center;
+    }
+
+    &__slider-nav {
+        @extend .col-2;
+        display: flex;
+        align-items: center;
+
+        //Non-BEM swiper styles
+        .swiper-button-next {
+            right: 5%;
+            color: $slider-icon-color;
+            height: $slider-icon-size;
+        }
+
+        .swiper-button-prev {
+            transform: rotate(180deg); // for some reason prev button is displayed as right arrow so i am rotating it so it looks like its pointing left
+            right: 10%;
+            color: $slider-icon-color;
+            height: $slider-icon-size;
+        }
+    }
+
+    &__heading-container {
+        margin-bottom: 2rem;
+        text-align: center;
+
+        &--with-slider-nav {
+            @extend .col-10;
+        }
+
+        &--no-slider-nav {
+            @extend .col-12;
+        }
+    }
+
+    &__heading {
+        @extend .section-heading;
+        color: $primary;
+        line-height: 1;
+    }
+
+    &__column {
+        // Fixed column classes for consistent behavior
+        @extend .col-12; // 1 card per row on mobile
+        @extend .col-md-6; // 2 cards per row on small screens
+
+        &--4 {
+            @extend .col-#{$breakpoint-expand}-3; // 4 cards per row on larger screens
+        }
+
+        &--3 {
+            @extend .col-#{$breakpoint-expand}-4; // 3 cards per row on larger screens
+        }
+
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    &__card-image {
+        display: block;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    &__card-title {
+        @extend .h4;
+        font-family: $font-family-base;
+        margin-top: spacer();
+    }
+
+}

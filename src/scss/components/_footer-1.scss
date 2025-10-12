@@ -1,0 +1,99 @@
+.footer-1 {
+    $breakpoint-expand: $nav-breakpoint-expand;
+
+    @include padding-y(spacer(2));
+
+    @include media-breakpoint-up($breakpoint-expand) {
+        @include padding-y(spacer(3));
+    }
+
+    background-color: $tertiary;
+
+    &__wrap {
+        @extend .container;
+    }
+
+    &__grid {
+        @extend .row;
+    }
+
+    &__item {
+        @extend .col-#{$breakpoint-expand}-4;
+
+        &:not(:last-child) {
+            @include media-breakpoint-down($breakpoint-expand) {
+                margin-bottom: spacer(2);
+            }
+        }
+    }
+
+    &__item-section {
+        &:not(:last-child) {
+            margin-bottom: spacer();
+        }
+    }
+
+    &__heading {
+        @extend .h4;
+        font-family: $font-family-base;
+
+        @include media-breakpoint-up(lg5) {
+            font-size: 1.4rem;
+        }
+
+        @include media-breakpoint-up(xl) {
+            font-size: 1.5rem;
+        }
+
+        border-bottom: $border-width solid $primary;
+
+        margin: {
+            top: 0;
+            bottom: spacer();
+        }
+
+        padding: {
+            bottom: spacer(0.25);
+        }
+    }
+
+    &__nav-list {
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+        row-gap: spacer();
+
+
+    }
+
+    &__nav-item {
+        width: 50%;
+    }
+
+    &__text {
+        @extend .text-content;
+    }
+
+    &__text-line {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        @include media-breakpoint-up(md) {
+            margin-bottom: spacer();
+        }
+
+        svg {
+            fill: $primary;
+            height: 1.2rem;
+            width: 1.2rem;
+
+            @include media-breakpoint-up(md) {
+                height: 1.4rem;
+                width: 1.4rem;
+            }
+        }
+    }
+}

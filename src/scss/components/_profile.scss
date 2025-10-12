@@ -1,0 +1,39 @@
+.profile {
+    @extend .row;
+
+    &__image-section {
+        @extend .col-2;
+        @extend .col-sm-3;
+    }
+
+    &__image {
+        aspect-ratio: 1 / 1;
+        border-radius: 999px;
+        display: block;
+        object-fit: cover;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    &__text-section {
+        @extend .col-10;
+        @extend .col-sm-9;
+    }
+
+    &__heading {
+        @extend .h2;
+    }
+
+    &__excerpt {
+        &:not(:last-child) {
+            margin-bottom: spacer();
+        }
+    }
+
+    &__content {
+        @extend .bg-light;
+        @extend .mb-3;
+        @extend .p-3;
+        @extend .rounded;
+    }
+}

@@ -1,0 +1,47 @@
+// Non-BEM WordPress pagination
+.wp-pagination {
+    $pagination-link-color: $link-color;
+    $pagination-link-hover-color: $link-color;
+    $pagination-link-hover-background: rgba($link-color, 0.15);
+    $pagination-link-active-color: $body-bg;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 0 spacer(-0.25) 0;
+
+    .page-numbers {
+        @include font-size($font-size-sm);
+        @include transition-colors;
+
+        align-items: center;
+        aspect-ratio: 1 / 1;
+        border: $border-width solid $pagination-link-color;
+        color: $pagination-link-color;
+        display: flex;
+        font-weight: $font-weight-bold;
+        justify-content: center;
+        margin: 0 0 spacer(0.25) -1px;
+        text-align: center;
+        text-decoration: none;
+        width: 3rem;
+
+        &[href] {
+            &:hover {
+                background: $pagination-link-hover-background;
+                border-color: $pagination-link-hover-color;
+                color: $pagination-link-hover-color;
+                text-decoration: none;
+            }
+        }
+
+        &.current {
+            background: $pagination-link-color;
+            color: $pagination-link-active-color;
+        }
+
+        &.dots {
+            border-color: transparent;
+        }
+    }
+}

@@ -1,0 +1,6 @@
+@mixin button {
+    @extend .btn;
+    @extend .btn-primary;
+
+    @include transition-colors;
+}

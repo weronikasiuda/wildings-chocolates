@@ -1,0 +1,44 @@
+.woocommerce-address-fields.woocommerce-address-fields.woocommerce-address-fields.woocommerce-address-fields {
+    .form-row-first,
+    .form-row-last {
+        width: calc(50% - #{spacer(0.5)});
+    }
+
+    .form-row {
+        padding: 0;
+        margin-bottom: spacer();
+    }
+
+    .form-row label {
+        @extend .form-label;
+
+        line-height: inherit;
+    }
+
+    .input-text {
+        @extend .form-control;
+    }
+
+    .button.button.button.button {
+        @extend .btn;
+        @extend .btn-primary;
+    }
+
+    .select2 {
+        .select2-selection {
+            @extend .form-control;
+
+            height: auto;
+        }
+
+        .select2-selection__rendered {
+            padding: 0;
+        }
+
+        .select2-selection__arrow {
+            right: spacer(0.25);
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}

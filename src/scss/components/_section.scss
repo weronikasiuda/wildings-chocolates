@@ -1,0 +1,23 @@
+.section {
+    padding-left: 0;
+    padding-right: 0;
+
+
+    &:not(:last-child) {
+        margin-bottom: spacer(2);
+
+        @include media-breakpoint-up(xxl) {
+            margin-bottom: spacer(3);
+        }
+    }
+
+    &--flex {
+        &:not(:last-child) {
+            margin-bottom: spacer(3);
+
+            @include media-breakpoint-up(xxl) {
+                margin-bottom: spacer(5);
+            }
+        }
+    }
+}

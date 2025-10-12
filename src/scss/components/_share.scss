@@ -1,0 +1,86 @@
+.share {
+    $block: &;
+
+    &--compact {
+        align-items: center;
+        display: flex;
+    }
+
+    &__heading {
+        @include font-size($font-size-sm);
+
+        font-weight: $font-weight-bold;
+        text-align: center;
+        text-transform: uppercase;
+
+        margin: {
+            top: 0;
+            bottom: spacer(0.75);
+        }
+
+        @at-root #{$block}--compact & {
+            text-align: left;
+
+            margin: {
+                right: spacer(0.75);
+                bottom: 0;
+            }
+        }
+    }
+
+    &__list {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: spacer(-0.25);
+        padding: 0;
+    }
+
+    &__item {
+        display: block;
+        margin: spacer(0.25);
+    }
+
+    &__link {
+        @include transition-colors;
+
+        background: $secondary;
+        border-radius: 999px;
+        color: $white;
+        display: block;
+        height: 50px;
+        position: relative;
+        width: 50px;
+
+        @at-root #{$block}--compact & {
+            height: 40px;
+            width: 40px;
+        }
+
+        &:hover {
+            background-color: mix($white, $secondary, 15%);
+            color: $white;
+        }
+
+        @each $network, $color in $social-colors {
+            &--#{$network} {
+                background-color: $color;
+
+                &:hover {
+                    background-color: mix($white, $color, 15%);
+                }
+            }
+        }
+
+        svg {
+            fill: currentColor;
+            height: 60%;
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 60%;
+        }
+    }
+}

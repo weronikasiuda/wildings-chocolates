@@ -1,0 +1,40 @@
+@mixin theme-transparent-button-colors-mixin {
+
+    @each $color-name,
+    $color-value in $theme-colors {
+        .bg-#{$color-name} & {
+            @if $color-name =="primary" {
+                border: 1px solid $tertiary;
+                background-color: transparent;
+                color: $tertiary;
+
+                svg {
+                    fill: $tertiary;
+                    stroke: $tertiary;
+                }
+            }
+
+            @else if $color-name =="secondary" {
+                border: 1px solid $primary;
+                background-color: transparent;
+                color: $primary;
+
+                svg {
+                    fill: $primary;
+                    stroke: $primary;
+                }
+            }
+
+            @else {
+                border: 1px solid $primary;
+                background-color: transparent;
+                color: $primary;
+
+                svg {
+                    fill: $primary;
+                    stroke: $primary;
+                }
+            }
+        }
+    }
+}

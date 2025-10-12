@@ -1,0 +1,221 @@
+.subnav {
+    $block: &;
+
+    // First level link styles
+    $subnav-link-color: inherit;
+    $subnav-link-bg: transparent;
+
+    $subnav-link-hover-color: $link-color;
+    $subnav-link-hover-bg: null;
+
+    // Second level link styles
+    $subnav-sub-link-color: inherit;
+    $subnav-sub-link-bg: null;
+
+    $subnav-sub-link-hover-color: $link-color;
+    $subnav-sub-link-hover-bg: null;
+
+    // Second level toggle link sizes
+    $subnav-toggle-link-size: 40px;
+    $subnav-toggle-icon-size: 24px;
+
+
+    @mixin active-pseudo-element {
+        &::before {
+            background: $primary;
+            content: "";
+            height: 10px;
+            left: 0;
+            margin-top: -5px;
+            position: absolute;
+            width: 10px;
+
+            @content;
+        }
+    }
+
+    &__heading {
+        @extend .h4;
+
+        margin: {
+            top: 0;
+            bottom: spacer();
+        }
+    }
+
+    &__list {
+        border-top: $border-width solid $border-color;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    &__item {
+        border-bottom: $border-width solid $border-color;
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+
+    &__link {
+        @include transition-colors;
+
+        background-color: $subnav-link-bg;
+        color: $subnav-link-color;
+        flex-grow: 1;
+        font-weight: $font-weight-bold;
+        max-width: 100%;
+        padding: spacer(0.5) spacer(0.75);
+        position: relative;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $subnav-link-hover-bg;
+            color: $subnav-link-hover-color;
+            text-decoration: none;
+        }
+
+        &:not(:last-child) {
+            max-width: calc(100% - #{$subnav-toggle-link-size});
+        }
+
+        @at-root #{$block}__item--active & {
+            @include active-pseudo-element {
+                top: calc(#{spacer(0.5)} + #{0.5 * 1em * $line-height-base});
+            }
+        }
+    }
+
+    &__toggle-button {
+        align-items: center;
+        background-color: $subnav-link-bg;
+        border: 0;
+        color: $subnav-link-color;
+        display: flex;
+        flex-shrink: 0;
+        justify-content: center;
+        text-decoration: none;
+        width: $subnav-toggle-link-size;
+
+        &:hover {
+            background-color: $subnav-link-hover-bg;
+            color: $subnav-link-hover-color;
+            text-decoration: none;
+        }
+
+        svg {
+            display: block;
+            fill: currentColor;
+            height: $subnav-toggle-icon-size;
+            transform: rotate(180deg);
+            width: $subnav-toggle-icon-size;
+        }
+
+        @at-root #{$block}__item--collapsed & {
+            svg {
+                transform: none;
+            }
+        }
+
+        @at-root #{$block}__sub-item--collapsed & {
+            svg {
+                transform: none;
+            }
+        }
+    }
+
+    &__sub-list {
+        margin: 0;
+        width: 100%;
+
+        padding: {
+            bottom: spacer(0.5);
+            left: spacer(0.75);
+        }
+
+        @at-root #{$block}__item--collapsed & {
+            display: none;
+        }
+    }
+
+    &__sub-item {
+        display: flex;
+        flex-wrap: wrap;
+
+        &:not(:last-child) {
+            margin-bottom: spacer(0.25);
+        }
+    }
+
+    &__sub-link {
+        @include transition-colors;
+
+        background: $subnav-sub-link-bg;
+        color: $subnav-sub-link-color;
+        display: block;
+        padding-left: spacer(0.75);
+        position: relative;
+        text-decoration: none;
+        width: calc(100% - #{$subnav-toggle-link-size});
+
+        &:hover {
+            background: $subnav-sub-link-hover-bg;
+            color: $subnav-sub-link-hover-color;
+            text-decoration: none;
+        }
+
+        @at-root #{$block}__sub-item--active & {
+            @include active-pseudo-element {
+                top: 0.5 * 1em * $line-height-base;
+            }
+        }
+    }
+
+    &__sub-sub-list {
+        @include font-size($font-size-sm);
+
+        margin: 0;
+        width: 100%;
+
+        padding: {
+            top: spacer(0.5);
+            bottom: spacer(0.5);
+            left: spacer(0.75);
+        }
+
+        @at-root #{$block}__sub-item--collapsed & {
+            display: none;
+        }
+    }
+
+    &__sub-sub-item {
+        display: block;
+
+        &:not(:last-child) {
+            margin-bottom: spacer(0.25);
+        }
+    }
+
+    &__sub-sub-link {
+        @include transition-colors;
+
+        background: $subnav-sub-link-bg;
+        color: $subnav-sub-link-color;
+        display: block;
+        padding-left: spacer(0.75);
+        position: relative;
+        text-decoration: none;
+
+        &:hover {
+            background: $subnav-sub-link-hover-bg;
+            color: $subnav-sub-link-hover-color;
+            text-decoration: none;
+        }
+
+        @at-root #{$block}__sub-sub-item--active & {
+            @include active-pseudo-element {
+                top: 0.5 * 1em * $line-height-base;
+            }
+        }
+    }
+}

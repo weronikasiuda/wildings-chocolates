@@ -1,0 +1,24 @@
+.figure {
+    @include figure;
+
+    &--left {
+        @include figure-left;
+    }
+
+    &--right {
+        @include figure-right;
+    }
+
+    &__image-link {
+        @include figure-image-link;
+    }
+
+    &__image {
+        @include figure-image;
+    }
+
+    &__caption {
+        @include figure-caption;
+        text-align: center;
+    }
+}

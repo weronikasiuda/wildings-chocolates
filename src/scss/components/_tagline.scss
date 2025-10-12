@@ -1,0 +1,32 @@
+.tagline {
+    @include padding-y(spacer(0.66));
+
+    &--primary {
+        background: $primary;
+        color: $light;
+    }
+
+    &--secondary {
+        background: $tertiary;
+        color: $primary;
+    }
+
+    &__wrap {
+        @extend .container;
+    }
+
+    &__row {
+        @extend .row;
+    }
+
+    &__column {
+        @extend .col-12;
+        @extend .text-center;
+    }
+
+    &__text {
+        font-weight: $font-weight-light;
+        font-size: $font-size-sm;
+        text-transform: uppercase;
+    }
+}

@@ -1,0 +1,35 @@
+.woocommerce-form-login.woocommerce-form-login.woocommerce-form-login.woocommerce-form-login {
+    border: 0;
+    background: transparent;
+    border-radius: $border-radius;
+    padding: spacer();
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+
+    .form-row {
+        padding: 0;
+        margin-bottom: spacer();
+    }
+
+    .form-row label {
+        @extend .form-label;
+    }
+
+    .input-text {
+        @extend .form-control;
+    }
+
+    .button.button.button.button {
+        @extend .btn;
+        @extend .btn-primary;
+    }
+
+    .woocommerce-form-login__rememberme {
+        margin: {
+            top: 0.5em;
+            bottom: 0;
+        }
+    }
+}

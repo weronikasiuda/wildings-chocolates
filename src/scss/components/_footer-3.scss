@@ -1,0 +1,56 @@
+.footer-3 {
+    $breakpoint-expand: $nav-breakpoint-expand;
+
+    @include font-size($font-size-sm);
+    @include padding-y(spacer(2));
+
+    background-color: $tertiary;
+
+    &__wrap {
+        @extend .container;
+    }
+
+    &__grid {
+        @extend .row;
+    }
+
+    &__main {
+        @extend .col-#{$breakpoint-expand}-9;
+
+        @include media-breakpoint-down($breakpoint-expand) {
+            margin-bottom: spacer();
+        }
+    }
+
+    &__side {
+        @extend .col-#{$breakpoint-expand}-3;
+
+        @include media-breakpoint-up($breakpoint-expand) {
+            text-align: right;
+        }
+    }
+
+    &__nav {
+        font-weight: $font-weight-bold;
+
+        &:not(:last-child) {
+            margin-bottom: 0.5em;
+        }
+    }
+
+    &__link,
+    &__nav-link {
+        color: inherit;
+        font-weight: $font-weight-bold;
+        text-decoration: none;
+
+        &:hover {
+            color: inherit;
+            text-decoration: underline;
+        }
+    }
+
+    &__nav-sep {
+        @include margin-x(0.25em);
+    }
+}

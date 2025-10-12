@@ -1,0 +1,73 @@
+.resource {
+    @include transition-colors;
+
+    background: $light;
+    border-radius: $border-radius-lg;
+    color: inherit;
+    display: block;
+    padding: spacer();
+    text-decoration: inherit;
+
+    &[href]:hover {
+        color: inherit;
+        text-decoration: inherit;
+    }
+
+    &--file {
+        background: $primary;
+        color: $white;
+
+        &[href]:hover {
+            background: $primary-hover-bg;
+            color: $white;
+        }
+    }
+
+    &--link {
+        // background: $light;
+        // color: $body-color;
+
+        // &[href]:hover {
+        //     background: $light-hover-bg;
+        //     color: $body-color;
+        // }
+        background: $secondary;
+        color: $light;
+
+        &[href]:hover {
+            background: lighten($secondary, 2%);
+            color: $light;
+        }
+    }
+
+    &__meta {
+        @include font-size($font-size-sm);
+
+        display: flex;
+        flex-wrap: wrap;
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
+
+        &:not(:last-child) {
+            margin-bottom: spacer(0.5);
+        }
+    }
+
+    &__meta-item {
+        margin-right: 1em;
+    }
+
+    &__excerpt {
+        &:not(:last-child) {
+            margin-bottom: spacer(0.5);
+        }
+    }
+
+    &__more {
+        margin: 0;
+
+        &:not(:first-child) {
+            margin-top: spacer();
+        }
+    }
+}

@@ -1,0 +1,13 @@
+.btn-with-icon {
+
+    &:hover {
+
+        span {
+            transform: translateX(spacer(0.25));
+        }
+    }
+
+    span {
+        transition: all 0.3s ease-in-out;
+    }
+}

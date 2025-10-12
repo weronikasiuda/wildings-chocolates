@@ -1,0 +1,36 @@
+// Non-BEM WordPress images in WYSIWYG content
+.wp-caption {
+    @include figure;
+
+    width: auto !important;
+
+    &.alignnone {
+        img {
+            @include margin-x(0);
+        }
+    }
+
+    img {
+        @include figure-image;
+    }
+}
+
+.wp-caption-text {
+    @include figure-caption;
+}
+
+.aligncenter {
+    @at-root img#{&} {
+        @include margin-x(auto);
+
+        display: block;
+    }
+}
+
+.alignleft {
+    @include figure-left;
+}
+
+.alignright {
+    @include figure-right;
+}

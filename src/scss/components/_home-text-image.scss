@@ -1,0 +1,38 @@
+.home-text-image {
+    $block: &;
+    $breakpoint-expand-2: md2; // 2 columns
+    $breakpoint-expand-3: $nav-breakpoint-expand;
+
+    background-color: $tertiary;
+
+    @include padding-y(spacer(1.5));
+
+    @include media-breakpoint-up($breakpoint-expand-2) {
+        @include padding-y(spacer(2.5));
+    }
+
+    @include media-breakpoint-up($breakpoint-expand-3) {
+        @include padding-y(spacer(2.5));
+    }
+
+    &__wrap {
+
+        @each $size,
+        $width in $container-max-widths {
+            $new-width: $width -50px;
+
+            @include media-breakpoint-up($size) {
+                max-width: $new-width;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+    }
+
+    &__grid {
+        @extend .row;
+    }
+
+}

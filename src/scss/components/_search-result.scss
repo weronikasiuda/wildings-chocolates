@@ -1,0 +1,5 @@
+.search-result {
+    &:not(:last-child) {
+        margin-bottom: spacer(2);
+    }
+}

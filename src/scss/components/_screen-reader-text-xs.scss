@@ -1,0 +1,5 @@
+.screen-reader-text-xs {
+    @include media-breakpoint-down(sm) {
+        @include visually-hidden;
+    }
+}

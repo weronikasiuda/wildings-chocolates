@@ -1,0 +1,8 @@
+@mixin transition-colors {
+    $transition-duration: 200ms !default;
+
+    transition: {
+        duration: $transition-duration;
+        property: background-color, border-color, color, fill, opacity;
+    }
+}

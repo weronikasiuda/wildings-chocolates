@@ -1,0 +1,9 @@
+body {
+    text-align: start; // left in LTR and right in RTL
+    overflow-x: hidden;
+}
+
+blockquote:not([class]),
+blockquote[class=""] {
+    @include margin-x(2rem);
+}

@@ -1,0 +1,142 @@
+ul.products.products.products.products {
+    $breakpoint-expand-2: sm; // 2 columns
+    $breakpoint-expand-3: md; // 3 columns
+
+    @extend .row;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    &:not(:last-child) {
+        margin-bottom: spacer(2);
+    }
+
+    .product {
+        @extend .col-12;
+        @extend .col-#{$breakpoint-expand-2}-6;
+        @extend .col-#{$breakpoint-expand-3}-3;
+
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        position: relative;
+        text-align: center;
+
+        // // 1 column
+        &:nth-child(n+2) {
+            @include media-breakpoint-down($breakpoint-expand-2) {
+                margin-top: spacer(2);
+            }
+        }
+
+        // // 2 columns
+        &:nth-child(n+3) {
+            @include media-breakpoint-between($breakpoint-expand-2, $breakpoint-expand-3) {
+                margin-top: spacer(2);
+            }
+        }
+
+        // 3 columns
+        // &:nth-child(n+4) {
+        //     @include media-breakpoint-up($breakpoint-expand-3) {
+        //         margin-top: spacer(2);
+        //     }
+        // }
+
+        //4 columns
+        &:nth-child(n+5) {
+            @include media-breakpoint-up($breakpoint-expand-3) {
+                margin-top: spacer(2);
+            }
+        }
+    }
+
+    // Custom elements for flexbox alignment
+    .product-link-main {
+        flex-grow: 1;
+        position: relative
+    }
+
+    .woocommerce-loop-product__title {
+        @extend .card-grid__card-title;
+    }
+
+    .woocommerce-loop-product__link {
+        color: inherit;
+    }
+
+    .product .wp-post-image,
+    .product .attachment-woocommerce_thumbnail {
+        margin-bottom: spacer(0.5);
+    }
+
+    .woocommerce-loop-product__title {
+        @extend .h2;
+
+        color: inherit;
+        margin-bottom: spacer(0.25);
+        padding: 0;
+    }
+
+    .price {
+        color: inherit;
+        font-size: inherit;
+    }
+
+    .price del {
+        color: $red;
+        font-size: inherit;
+        opacity: 1;
+        margin: 0 0.25em;
+        text-decoration: line-through;
+    }
+
+    .price ins {
+        color: inherit;
+        margin: 0 0.25em;
+        text-decoration: none;
+    }
+
+    .button {
+        @extend .btn;
+        @extend .btn-primary;
+
+        margin-top: spacer(0.5);
+    }
+
+    .onsale.onsale.onsale.onsale {
+        @include sale-badge;
+
+        top: spacer(-0.25);
+        right: spacer(-0.25);
+        left: auto;
+    }
+
+    .featured-product-badge {
+        height: 24px;
+        left: 8px;
+        position: absolute;
+        top: 8px;
+        width: 24px;
+        z-index: 10;
+
+        svg {
+            display: block;
+            fill: $blue;
+            height: 100%;
+            left: 50%;
+            paint-order: stroke;
+            position: absolute;
+            stroke-width: 3px;
+            stroke: rgba($white, 0.75);
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+        }
+    }
+
+    .added_to_cart {
+        display: table;
+        margin: 0 auto;
+    }
+}

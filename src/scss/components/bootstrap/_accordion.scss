@@ -1,0 +1,30 @@
+// Non-BEM Bootstrap 5 accordion
+// https://getbootstrap.com/docs/5.2/components/accordion/
+
+.accordion {
+
+    .accordion-header {
+        font-family: $font-family-base;
+    }
+
+    // Non-JavaScript styles
+    .accordion-button:not([data-bs-target]) {
+        background: inherit;
+        color: inherit;
+        cursor: inherit;
+
+        &::after {
+            content: none;
+        }
+    }
+
+    // Custom styles
+    .accordion-item {
+        border-left: 0;
+        border-right: 0;
+    }
+
+    .accordion-button {
+        font-weight: $font-weight-bold;
+    }
+}

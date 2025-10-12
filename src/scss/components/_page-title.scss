@@ -1,0 +1,9 @@
+.page-title {
+    @extend .h1;
+
+    margin-bottom: spacer(2);
+
+    @include media-breakpoint-up(xxl) {
+        margin-bottom: spacer(4);
+    }
+}

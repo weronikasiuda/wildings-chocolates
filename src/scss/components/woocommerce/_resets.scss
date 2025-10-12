@@ -1,0 +1,28 @@
+/* Override WooCommerce styles for footer logo */
+.woocommerce .footer-2 img,
+.woocommerce-page .footer-2 img {
+
+    $breakpoint-expand: $nav-breakpoint-expand;
+
+    display: block;
+    height: 48px;
+
+    @include media-breakpoint-up($breakpoint-expand) {
+        height: 60px;
+    }
+
+}
+
+.woocommerce .header__title .header__title-link img,
+.woocommerce-page .header__title .header__title-link img {
+
+    $breakpoint-expand: $nav-breakpoint-expand;
+
+    display: block;
+    height: 48px;
+
+    @include media-breakpoint-up($breakpoint-expand) {
+        height: 60px;
+    }
+
+}

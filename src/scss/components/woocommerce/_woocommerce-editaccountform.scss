@@ -1,0 +1,40 @@
+.woocommerce-EditAccountForm.woocommerce-EditAccountForm.woocommerce-EditAccountForm.woocommerce-EditAccountForm {
+    .woocommerce-form-row--first,
+    .woocommerce-form-row--last {
+        width: calc(50% - #{spacer(0.5)});
+    }
+
+    .form-row {
+        padding: 0;
+        margin-bottom: spacer();
+    }
+
+    .form-row label {
+        @extend .form-label;
+
+        line-height: inherit;
+    }
+
+    .woocommerce-Input {
+        @extend .form-control;
+    }
+
+    #account_display_name + span {
+        @include font-size($font-size-sm);
+
+        color: $secondary;
+        display: block;
+        margin-top: spacer(0.25);
+    }
+
+    fieldset {
+        &:not(:first-child) {
+            margin-top: spacer(2);
+        }
+    }
+
+    .button.button.button.button {
+        @extend .btn;
+        @extend .btn-primary;
+    }
+}

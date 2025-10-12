@@ -1,0 +1,24 @@
+.breadcrumb-nav {
+    @include font-size($font-size-sm);
+    @include margin-y(spacer(0.5));
+
+    font-weight: $font-weight-bold;
+
+    &__wrap {
+        @extend .container;
+    }
+
+    &__link {
+        @include transition-colors;
+
+        color: inherit;
+
+        &:hover {
+            color: $link-color;
+        }
+    }
+
+    &__sep {
+        @include margin-x(0.25em);
+    }
+}

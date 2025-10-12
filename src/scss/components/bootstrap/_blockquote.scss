@@ -1,0 +1,44 @@
+// Non-BEM Bootstrap 5 blockquote
+// https://getbootstrap.com/docs/5.2/content/typography/
+
+.blockquote {
+    text-align: center;
+
+    &::before,
+    &::after {
+        @include margin-x(auto);
+
+        background: $secondary-lighter;
+        border-radius: 999px;
+        content: "";
+        display: block;
+        height: 5px;
+        width: 100px;
+    }
+
+    &::before {
+        margin-bottom: spacer();
+    }
+
+    &::after {
+        margin-top: spacer();
+    }
+}
+
+.blockquote {
+    font-style: italic;
+    font-weight: $font-weight-bold;
+    margin-bottom: 0;
+}
+
+.blockquote-footer {
+    color: inherit;
+    font-weight: $font-weight-bold;
+    margin-top: spacer(0.5);
+    text-transform: uppercase;
+    text-align: center;
+
+    &::before {
+        content: none;
+    }
+}

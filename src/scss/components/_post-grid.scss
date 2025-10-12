@@ -1,0 +1,23 @@
+.post-grid {
+    $breakpoint-expand: md;
+
+    // @extend .card-grid;
+
+    &__wrap {
+        @extend .container;
+    }
+
+    &__row {
+        @extend .row;
+        @extend .gy-3;
+        @extend .gy-xl-4;
+    }
+
+    &__item {
+        @extend .col-12;
+        @extend .col-sm-8;
+        @extend .offset-sm-2;
+        @extend .offset-#{$breakpoint-expand}-0;
+        @extend .col-#{$breakpoint-expand}-6;
+    }
+}

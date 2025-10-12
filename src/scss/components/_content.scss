@@ -1,0 +1,54 @@
+.content {
+    $breakpoint-expand: $nav-breakpoint-expand;
+
+    @include margin-y(spacer(2));
+
+    @include media-breakpoint-up($breakpoint-expand) {
+        @include margin-y(spacer(3));
+    }
+
+    $block: &;
+
+    &__wrap {
+        @extend .container;
+    }
+
+    &__row {
+        @extend .row;
+    }
+
+    &__main {
+        @extend .col-xl-8;
+        @extend .order-xl-1;
+        @extend .offset-xl-0;
+
+        &:not(:last-child) {
+            @include media-breakpoint-down($nav-breakpoint-expand) {
+                margin-bottom: spacer(2);
+            }
+        }
+
+        // Align the main column to the centre of its container if the side
+        // column does not exist.
+        // &:only-child {
+        //     @extend .offset-lg-2;
+        // }
+
+        &--full {
+            @extend .col-xl-10;
+            @extend .offset-xl-1;
+        }
+    }
+
+    // .content__main--full {
+    //     &:only-child {
+    //         @extend .offset-lg-0;
+    //     }
+    // }
+
+    &__side {
+        @extend .col-xl-3;
+        @extend .order-xl-2;
+        @extend .offset-xl-1;
+    }
+}

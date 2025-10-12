@@ -1,0 +1,7 @@
+.woocommerce .cart-collaterals.cart-collaterals.cart-collaterals.cart-collaterals {
+    h2 {
+        @extend .h3;
+
+        margin-bottom: spacer();
+    }
+}

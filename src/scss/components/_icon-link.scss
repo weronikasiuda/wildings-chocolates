@@ -1,0 +1,35 @@
+.icon-link {
+    @include transition-colors;
+
+    align-items: center;
+    color: $link-color;
+    display: inline-flex;
+    font-weight: $font-weight-bold;
+    text-decoration: none;
+
+    &:hover {
+        color: $link-hover-color;
+    }
+
+    &__icon {
+        height: 24px;
+        width: 24px;
+
+        svg {
+            display: block;
+            fill: currentColor;
+        }
+
+        &:not(:first-child) {
+            margin-left: spacer(0.25);
+        }
+
+        &:not(:last-child) {
+            margin-right: spacer(0.25);
+        }
+    }
+
+    &__text {
+        text-decoration: underline;
+    }
+}

@@ -1,0 +1,192 @@
+.card-grid {
+    $breakpoint-expand: md;
+
+    @include margin-y(spacer(2));
+
+    @include media-breakpoint-up(lg5) {
+        @include margin-y(spacer(4));
+    }
+
+    &__wrap {
+        @extend .container;
+
+        &--narrow {
+            @include narrower-container;
+        }
+    }
+
+    &__row {
+        @extend .row;
+        @extend .gy-lg-2;
+        @extend .gx-xxl-4;
+
+        &--cards {
+            @extend .gy-4;
+            @extend .gx-4;
+        }
+    }
+
+    &__heading-container {
+        margin-bottom: 2rem;
+        text-align: center;
+
+        &--with-slider-nav {
+            @extend .col-10;
+        }
+
+        &--no-slider-nav {
+            @extend .col-12;
+        }
+    }
+
+    &__heading {
+        @extend .section-heading;
+        color: $primary;
+        line-height: 1;
+
+        &--left-aligned {
+            text-align: start;
+        }
+    }
+
+    &__slider-nav {
+        @extend .col-2;
+    }
+
+    &__slider-nav-buttons {
+        position: relative;
+        top: 15%;
+
+        //Non-BEM swiper styles
+        .swiper-button-next {
+            height: $slider-icon-size-sm;
+            color: $slider-icon-color;
+            right: -20%;
+
+            @include media-breakpoint-up(lg) {
+                right: -9%;
+            }
+        }
+
+        .swiper-button-prev {
+            transform: rotate(180deg); // for some reason prev button is displayed as right arrow so i am rotating it so it looks like its pointing left
+            color: $slider-icon-color;
+            height: $slider-icon-size-sm;
+            right: 80%;
+
+            @include media-breakpoint-up(md) {
+                right: 30%;
+            }
+
+            @include media-breakpoint-up(xl) {
+                right: 20%;
+            }
+        }
+    }
+
+    &__section-title {
+        @extend .section-heading;
+    }
+
+    &__column {
+        @extend .col-12; // 1 card per row on mobile
+        @extend .col-sm-6;
+        // @extend .offset-sm-2;
+        // @extend .offset-#{$breakpoint-expand}-0;
+
+        &--4 {
+            @extend .col-#{$breakpoint-expand}-3; // 4 cards per row on larger screens
+        }
+
+        &--3 {
+            @extend .col-#{$breakpoint-expand}-4; // 3 cards per row on larger screens
+        }
+    }
+
+    &__card {
+        background: transparent;
+        transition: transform 0.2s ease;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+    }
+
+    &__card-image {
+        aspect-ratio: 1 / 1;
+        display: block;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    &__card-title {
+        font-size: 1rem;
+        font-weight: $font-weight-semibold;
+        font-family: $font-family-base;
+        flex-grow: 1;
+        text-align: center;
+
+        @include media-breakpoint-up(sm) {
+            font-size: 1.2rem;
+        }
+
+        @include media-breakpoint-up(md) {
+            font-size: 1.15rem;
+        }
+
+        @include media-breakpoint-between(lg, xl) {
+            font-size: 1.13rem;
+        }
+    }
+
+    &__card-text {
+        padding: 1rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        // Reduce padding on mobile for better fit
+        @include media-breakpoint-up(xl) {
+            padding: 1.5rem;
+        }
+    }
+
+    &__card-link {
+        font-weight: 600;
+        text-decoration: none;
+        margin-bottom: 1rem;
+    }
+
+    &__card-price {
+        margin-bottom: 1rem;
+        font-size: $h5-font-size;
+        text-align: center;
+
+        // Slightly smaller font on mobile
+        @include media-breakpoint-down(sm) {
+            font-size: 1rem;
+        }
+    }
+
+    &__price-text {
+        font-weight: $font-weight-semibold;
+
+        &--regular {
+            color: $gray;
+            font-weight: 400;
+            margin-left: 0.5rem;
+        }
+    }
+
+    &__card-button {
+        @extend .btn;
+        @extend .btn-primary;
+
+        // Ensure button text doesn't overflow on mobile
+        @include media-breakpoint-down(sm) {
+            font-size: 0.875rem;
+            padding: 0.5rem 1rem;
+        }
+    }
+}

@@ -1,0 +1,150 @@
+.footer-2 {
+    $breakpoint-medium: sm;
+    $breakpoint-expand: $nav-breakpoint-expand;
+    @include padding-y(spacer(0.25));
+
+    background-color: $tertiary;
+
+    &__wrap {
+        @extend .container;
+    }
+
+    &__row {
+        @extend .row;
+        @extend .gy-3;
+        align-items: center;
+    }
+
+    &__logo-column {
+        @extend .col-12;
+        @extend .col-sm-4;
+    }
+
+    &__logo-heading {
+        display: flex;
+        justify-content: center;
+
+        @include media-breakpoint-up($breakpoint-expand) {
+            justify-content: start;
+        }
+    }
+
+    &__logo-link {}
+
+    &__logo-image {
+        display: block;
+        height: 45px;
+
+        @include media-breakpoint-up(sm) {
+            height: 55px;
+        }
+
+        @include media-breakpoint-up($breakpoint-expand) {
+            height: 65px;
+        }
+    }
+
+    &__nav-column {
+        @extend .col-12;
+        @extend .col-sm-6;
+        @extend .offset-sm-2;
+        @extend .offset-md-1;
+        @extend .col-lg3-8;
+        @extend .offset-lg3-0;
+    }
+
+    &__nav-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0;
+        padding: 0;
+        row-gap: spacer(0.75);
+
+        @include media-breakpoint-up($breakpoint-expand) {
+            justify-content: end;
+            gap: spacer(3.5);
+        }
+    }
+
+    &__nav-item {
+        display: block;
+        flex-basis: 35%;
+
+        @include media-breakpoint-up($breakpoint-expand) {
+            flex-basis: auto;
+        }
+
+        // position: relative; // Added for submenu positioning
+
+
+        @include media-breakpoint-down($breakpoint-medium) {
+            margin: {
+                bottom: spacer(0.125);
+                right: spacer(0.5);
+            }
+        }
+
+        @include media-breakpoint-between($breakpoint-medium, $breakpoint-expand) {
+            margin: {
+                top: spacer(0.0625);
+                bottom: spacer(0.0625);
+                right: spacer(0.5);
+            }
+        }
+    }
+
+    &__nav-link {
+        @include transition-colors;
+        @include font-size($font-size-sm);
+        font-weight: $font-weight-bold;
+        text-decoration: none;
+
+        &:hover {
+            color: $primary-hover-bg;
+            text-decoration: none;
+        }
+
+        @include media-breakpoint-up(xl) {
+            font-size: $font-size-base;
+        }
+    }
+
+    // New styles for submenu
+    &__subnav-list {
+        display: none;
+
+
+        @include media-breakpoint-up($breakpoint-expand) {
+            // For larger screens, ensure submenu doesn't disrupt layout
+            display: block;
+            margin: spacer(0.125) 0 0;
+            padding: 0;
+            list-style: none;
+            min-width: 150px;
+        }
+    }
+
+    &__subnav-item {
+        display: none;
+
+        @include media-breakpoint-up($breakpoint-expand) {
+            padding-left: 0;
+            display: block;
+            margin: 0 0 spacer(0.125) 0;
+        }
+    }
+
+    &__subnav-link {
+        @include transition-colors;
+        @include font-size($font-size-xs); // Smaller size for child links
+        font-weight: $font-weight-normal; // Slightly less bold than parent
+        text-decoration: none;
+        display: block;
+
+        &:hover {
+            color: $primary-hover-bg;
+            text-decoration: none;
+        }
+    }
+}

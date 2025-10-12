@@ -1,0 +1,28 @@
+.footer-big-link {
+    font-weight: $font-weight-bold;
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+        color: inherit;
+        text-decoration: underline;
+        text-decoration-thickness: $text-decoration-thickness;
+    }
+
+    @include media-breakpoint-up(md) {
+        font-size: $font-size-lg;
+    }
+
+    @include media-breakpoint-up(lg5) {
+        font-size: $font-size-base;
+    }
+
+
+    &[href^=tel] {
+        cursor: inherit;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.woocommerce-cart-form.woocommerce-cart-form.woocommerce-cart-form.woocommerce-cart-form {
+    .shop_table {
+        margin-bottom: spacer(2);
+    }
+
+    .coupon {
+        .input-text {
+            width: 180px;
+        }
+    }
+
+    .button {
+        @extend .btn;
+        @extend .btn-secondary;
+        @extend .btn-sm;
+
+        &:disabled {
+            color: $white;
+        }
+    }
+}

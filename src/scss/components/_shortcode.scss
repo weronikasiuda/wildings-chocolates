@@ -1,0 +1,32 @@
+.shortcode {
+
+    @include padding-y(spacer(3));
+    background-color: $primary;
+
+
+    &__container {
+        @extend .container;
+    }
+
+    &__row {
+        @extend .row;
+        @extend .gy-4;
+        @extend .gx-4;
+    }
+
+    &__text-col,
+    &__shortcode-col {
+        @extend .col-12;
+    }
+
+    &__heading-container {}
+
+    text-align: center;
+
+    &__heading {
+        @extend .section-heading;
+        color: $light;
+        line-height: 1;
+    }
+
+}

@@ -1,0 +1,16 @@
+.fixed .column-page_count {
+    width: 10%;
+}
+
+// Hide the post parent and post status fields in the region and intergroup
+// quick edit form because there is no good way of adding error messages when
+// the child page count limit is exceeded.
+.post-type-intergroup,
+.post-type-region {
+    .inline-edit-col-right > .inline-edit-col:first-child {
+        > label:first-child,
+        > .inline-edit-group:nth-child(3) > label:first-child {
+            display: none;
+        }
+    }
+}

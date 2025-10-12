@@ -1,0 +1,5 @@
+.subsection {
+    &:not(:last-child) {
+        margin-bottom: spacer();
+    }
+}

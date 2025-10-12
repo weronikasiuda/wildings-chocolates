@@ -1,0 +1,49 @@
+// _fonts.scss
+
+// Font paths
+$font-path: '/wp-content/themes/wildings-chocolates/fonts/';
+
+// Caveat (Google Font)
+@font-face {
+    font-family: 'Caveat';
+    src: url('#{$font-path}Caveat-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Caveat';
+    src: url('#{$font-path}Caveat-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+// Add other Caveat weights if you have them
+
+// Didact Gothic (Google Font)
+@font-face {
+    font-family: 'Didact Gothic';
+    src: url('#{$font-path}DidactGothic-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+// Zodiak - Using Variable Font (Recommended - smaller file size)
+@font-face {
+    font-family: 'Zodiak';
+    src: url('#{$font-path}Zodiak-Variable.woff2') format('woff2');
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Zodiak';
+    src: url('#{$font-path}Zodiak-VariableItalic.woff2') format('woff2');
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: italic;
+}

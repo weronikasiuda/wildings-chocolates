@@ -1,0 +1,11 @@
+.woocommerce-cart {
+
+    .woocommerce {
+        .return-to-shop {
+            .wc-backward {
+                @extend .btn;
+                @extend .btn-primary;
+            }
+        }
+    }
+}

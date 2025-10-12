@@ -1,0 +1,88 @@
+// Non-BEM WordPress comments
+.wp-comments {
+    .comment-list {
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+
+    .comment-list .comment {
+        display: block;
+
+        &:not(:last-child) {
+            margin-bottom: spacer();
+        }
+    }
+
+    .comment-list .children {
+        margin: 0;
+        padding-left: spacer(2);
+
+        &:not(:first-child) {
+            margin-top: spacer();
+        }
+
+        &:not(:last-child) {
+            margin-bottom: spacer();
+        }
+    }
+
+    .comment-list .comment-author {
+        margin-bottom: spacer(0.5);
+    }
+
+    .comment-list .comment-author .avatar {
+        margin-right: spacer(0.5);
+    }
+
+    .comment-list .comment-metadata {
+        @include font-size($font-size-sm);
+
+        color: $secondary;
+        margin-bottom: spacer(0.5);
+    }
+
+    .comment-list .comment-content {
+        margin-bottom: spacer(0.5);
+
+        > :last-child,
+        > :last-child > :last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .comment-list .comment-reply {
+        @include font-size($font-size-sm);
+    }
+
+    .comment-respond {
+        &:not(:first-child) {
+            margin-top: spacer(2);
+        }
+    }
+
+    .comment-form-author,
+    .comment-form-email,
+    .comment-form-url,
+    .comment-form-comment {
+        margin-bottom: spacer();
+
+        > label {
+            display: block;
+            margin-bottom: spacer(0.5);
+        }
+
+        > input,
+        > textarea {
+            @extend .form-control;
+
+            display: block;
+            width: 100%;
+        }
+    }
+
+    .form-submit > input[type="submit"] {
+        @extend .btn;
+        @extend .btn-primary;
+    }
+}

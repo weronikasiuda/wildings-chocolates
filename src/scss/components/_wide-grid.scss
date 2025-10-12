@@ -1,0 +1,32 @@
+.wide-grid {
+    $breakpoint-expand-2: md; // 2 columns
+    $breakpoint-expand-3: lg; // 3 columns
+
+    @extend .row;
+
+    &__item {
+        @extend .col-#{$breakpoint-expand-2}-6;
+        @extend .col-#{$breakpoint-expand-3}-4;
+
+        // 1 column
+        &:nth-child(n+2) {
+            @include media-breakpoint-down($breakpoint-expand-2) {
+                margin-top: $grid-gutter-width;
+            }
+        }
+
+        // 2 columns
+        &:nth-child(n+3) {
+            @include media-breakpoint-between($breakpoint-expand-2, $breakpoint-expand-3) {
+                margin-top: $grid-gutter-width;
+            }
+        }
+
+        // 3 columns
+        &:nth-child(n+4) {
+            @include media-breakpoint-up($breakpoint-expand-3) {
+                margin-top: $grid-gutter-width;
+            }
+        }
+    }
+}
