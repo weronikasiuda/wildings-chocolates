@@ -130,12 +130,12 @@ add_filter('option_woocommerce_placeholder_image', function ($value, $option) {
 // Add grid HTML to single product image and text content
 add_action('woocommerce_before_single_product_summary', function () {
     global $product;
-    $img_cols = 'col-md-5'; // Default for non-composite
+    $img_cols = 'col-md-4'; // Default for non-composite
 
-    // Check if the product object exists and is a composite product
-    if ( is_a( $product, 'WC_Product' ) && $product->is_type( 'composite' ) ) {
-        $img_cols = 'col-md-4'; // Change to col-md-4 for composite
-    }
+    // // Check if the product object exists and is a composite product
+    // if ( is_a( $product, 'WC_Product' ) && $product->is_type( 'composite' ) ) {
+    //     $img_cols = 'col-md-4'; // Change to col-md-4 for composite
+    // }
 
     ?>
     <div class="section">
@@ -150,7 +150,7 @@ add_action('woocommerce_before_single_product_summary', function () {
 
     // Check if the product object exists and is a composite product
     if ( is_a( $product, 'WC_Product' ) && $product->is_type( 'composite' ) ) {
-        $text_cols = 'col-md-7 offset-md-1'; // Change to col-md-7 for composite (4 + 7 + 1 = 12)
+        $text_cols = 'col-12'; 
     }
 
     ?>
