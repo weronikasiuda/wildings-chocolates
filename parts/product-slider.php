@@ -45,14 +45,18 @@ if (empty($items)) {
                                         <h3 class="card-grid__card-title">
                                             <?php echo esc_html($item['title']); ?>
                                         </h3>
-                                        <div class="card-grid__card-price">
-                                            <?php if (!empty($item['sale_price'])) : ?>
-                                                <span class="card-grid__price-text card-grid__price-text--sale">£<?php echo esc_html($item['sale_price']); ?></span>
-                                                <span class="card-grid__price-text card-grid__price-text--regular"><s>£<?php echo esc_html($item['regular_price']); ?></s></span>
-                                            <?php else : ?>
-                                                <span class="card-grid__price-text">£<?php echo esc_html($item['regular_price']); ?></span>
-                                            <?php endif; ?>
-                                        </div>
+                                         <!-- CHECK: Only display the price container if a price exists -->
+                                       <?php if (!empty($item['sale_price']) || !empty($item['regular_price'])) : 
+                                        ?>
+                                            <div class="card-grid__card-price">
+                                                <?php if (!empty($item['sale_price'])) : ?>
+                                                    <span class="card-grid__price-text card-grid__price-text--sale">£<?php echo esc_html($item['sale_price']); ?></span>
+                                                    <span class="card-grid__price-text card-grid__price-text--regular"><s>£<?php echo esc_html($item['regular_price']); ?></s></span>
+                                                <?php elseif (!empty($item['regular_price'])) : ?>
+                                                    <span class="card-grid__price-text">£<?php echo esc_html($item['regular_price']); ?></span>
+                                                <?php endif; ?>
+                                            </div>
+                                        <?php endif; // End price container check ?>
                                         <a href="<?php echo esc_url($item['link_url']); ?>" class="card-grid__card-button">
                                             <?php echo isset($item['button_text']) ? esc_html($item['button_text']) : 'View product'; ?>
                                         </a>

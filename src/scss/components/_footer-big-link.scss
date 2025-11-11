@@ -20,9 +20,5 @@
 
     &[href^=tel] {
         cursor: inherit;
-
-        &:hover {
-            text-decoration: none;
-        }
     }
 }

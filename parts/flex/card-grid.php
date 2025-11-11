@@ -22,9 +22,17 @@ if (!$cards) {
     return;
 }
 
+$section_id = $args['section_id'] ?? null; // Section ID
+// Prepare ID attribute
+// NEW LOGIC: Conditionally set the ID attribute string
+$id_attr = '';
+if (!empty($section_id)) {
+    $id_attr = ' id="' . esc_attr($section_id) . '"';
+}
+
 ?>
 <div class="section section--flex">
-    <div class="card-grid">
+    <div class="card-grid" <?= $id_attr ?>>
         <div class="card-grid__wrap">
             <div class="card-grid__row card-grid__row--cards">
                 <?php

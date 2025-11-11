@@ -12,7 +12,11 @@
     }
 
     @include media-breakpoint-up(lg) {
-        width: calc(20% - 6px);
+        width: calc(10% - 6px);
+    }
+
+    @include media-breakpoint-up(xxxl) {
+        width: calc(16% - 6px);
     }
 }
 
@@ -21,7 +25,11 @@
 }
 
 
-// .wooco_component_layout_grid_4 .wooco_component_product_selection_grid .wooco_component_product_selection_grid_item {
+.wooco_component {
+    @include media-breakpoint-up(lg) {
+        margin-top: 3rem;
+    }
+}
 
 
 .wooco-qty-label {
@@ -31,6 +39,11 @@
 .wooco_component_product_selection_grid_item_name {
     padding: 0px 5px;
     min-height: 40px;
+}
+
+//Hiding individual prices on product cards so customers do not see price per chocolate
+.wooco_component_product_selection_grid_item_desc {
+    display: none;
 }
 
 .wooco_component_product_selection_grid_item_info {
@@ -87,4 +100,12 @@
 
 .wooco_component_product_selection_grid_item.wooco_item_selected::before {
     background-color: $primary;
+}
+
+
+.product-type-composite {
+    .wp-post-image {
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+    }
 }

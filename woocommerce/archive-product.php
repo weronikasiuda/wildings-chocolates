@@ -31,8 +31,9 @@ get_template_part('parts/breadcrumb-nav');
                  */
                 do_action('woocommerce_before_main_content');
 
-                // Only show page title and description on main shop page, not category pages
-                if (!is_product_category() && !is_product_tag()) {
+                // FIX: Check if the current page IS NOT any product taxonomy archive (cat, tag, diet, occasion, etc.)
+                // This correctly isolates the main shop page for displaying sliders.
+                if (!is_tax(get_object_taxonomies('product'))) {
                     // Page title and introductory content for main shop page only
                     ob_start();
                     if (apply_filters('woocommerce_show_page_title', true)) {
@@ -106,6 +107,28 @@ get_template_part('parts/breadcrumb-nav');
                             continue;
                         }
                         
+                            // --- START AMENDMENT ---
+                        if ($taxonomy_slug === 'product_cat' && defined('HIDDEN_PRODUCT_CATS')) {
+                            
+                            // Use the new constant array
+                            $hidden_cats_slugs = HIDDEN_PRODUCT_CATS;
+                            
+                            $filtered_terms = [];
+                            foreach ($terms as $term) {
+                                // Exclude terms whose slug is in the defined array
+                                if (!in_array($term->slug, $hidden_cats_slugs)) {
+                                    $filtered_terms[] = $term;
+                                }
+                            }
+                            $terms = $filtered_terms;
+                            
+                            // If, after filtering, there are no terms left, skip the slider
+                            if (empty($terms)) {
+                                continue;
+                            }
+                        }
+                        // --- END AMENDMENT ---
+                        
                         $slider_data = [
                             'row_index' => $row_index,
                             'section_heading' => $section_heading,
@@ -116,7 +139,7 @@ get_template_part('parts/breadcrumb-nav');
                         get_template_part('parts/taxonomy-slider', null, $slider_data);
                     }
                 } else {
-                    // If we're on a category page, show the products
+                    // If we're on a taxonomy page (product_cat, diet, occasion, etc.), show the products
                     if (woocommerce_product_loop()) {
                         /**
                          * Hook: woocommerce_shop_loop_header.

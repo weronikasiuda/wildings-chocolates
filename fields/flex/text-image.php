@@ -9,6 +9,16 @@ return [
     'name' => 'text_image',
     'sub_fields' => [
         [
+            'label' => 'Section ID',
+            'key' => 'flex__flex__flex_sections__text_image__section_idt',
+            'name' => 'section_id',
+            'type' => 'text',
+            'instructions' => 'Adding a descriptive ID to a section allows you to create a unique HTML anchor for that specific part of your webpage. Use one word or multiple words separated by hyphens.',
+            'wrapper' => [
+                'width' => 100,
+            ],
+        ],
+        [
             'label' => 'Title',
             'key' => 'flex__flex__flex_sections__text_image__title',
             'name' => 'title',

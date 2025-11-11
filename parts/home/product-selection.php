@@ -26,7 +26,7 @@ if (!empty($products)) {
         $title = $product->get_name();
         $regular_price = $product->get_regular_price();
         $sale_price = $product->get_sale_price();
-        $price_html = $product->get_price_html();
+        // $price_html = $product->get_price_html();
         $link_url = $product->get_permalink();
         
         $grid_items[] = [
@@ -34,9 +34,9 @@ if (!empty($products)) {
             'link_url' => $link_url,
             'image_src' => $image_src ?: '',
             'image_alt' => $image_alt ?: $title,
-            'regular_price' => $regular_price,
-            'sale_price' => $sale_price,
-            'price_html' => $price_html,
+            // 'regular_price' => $regular_price,
+            // 'sale_price' => $sale_price,
+            // 'price_html' => $price_html,
         ];
     }
 }

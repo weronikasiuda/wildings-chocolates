@@ -132,10 +132,10 @@ add_action('woocommerce_before_single_product_summary', function () {
     global $product;
     $img_cols = 'col-md-4'; // Default for non-composite
 
-    // // Check if the product object exists and is a composite product
-    // if ( is_a( $product, 'WC_Product' ) && $product->is_type( 'composite' ) ) {
-    //     $img_cols = 'col-md-4'; // Change to col-md-4 for composite
-    // }
+    // Check if the product object exists and is a composite product
+    if ( is_a( $product, 'WC_Product' ) && $product->is_type( 'composite' ) ) {
+        $img_cols = 'col-12 col-md-8 offset-md-2'; // Change to col-md-4 for composite
+    }
 
     ?>
     <div class="section">
@@ -146,12 +146,12 @@ add_action('woocommerce_before_single_product_summary', function () {
 
 add_action('woocommerce_before_single_product_summary', function () {
     global $product;
-    $text_cols = 'col-md-7 offset-md-1'; // Default for non-composite (5 + 1 + 6 = 12)
+    $text_cols = 'col-12 col-md-7 offset-md-1'; // Default for non-composite (5 + 1 + 6 = 12)
 
-    // Check if the product object exists and is a composite product
-    // if ( is_a( $product, 'WC_Product' ) && $product->is_type( 'composite' ) ) {
-    //     $text_cols = 'col-12'; 
-    // }
+    //Check if the product object exists and is a composite product
+    if ( is_a( $product, 'WC_Product' ) && $product->is_type( 'composite' ) ) {
+        $text_cols = 'col-12 mt-md-5'; 
+    }
 
     ?>
             </div>
@@ -313,3 +313,4 @@ add_filter( 'gettext', function( $new_text ) {
     }
     return $new_text;
 } );
+

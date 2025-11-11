@@ -62,7 +62,7 @@ if (empty($terms)) {
                     ?>
                         <div class="swiper-slide">
                             <a href="<?php echo esc_url($term_link); ?>" class="image-card-grid__card">
-                                <img class="image-card-grid__card-image"
+                                <img  class="image-card-grid__card-image"
                                     src="<?php echo esc_url($image_src); ?>"
                                     alt="<?php echo esc_attr($image_alt); ?>">
                                 <div class="image-card-grid__card-text">

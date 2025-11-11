@@ -23,6 +23,8 @@ $layout = $args['layout'] ?? null;
 $link_items = (array) ($args['links'] ?? []);
 $links = [];
 
+$section_id = $args['section_id'] ?? null; // Section ID
+
 
 // Assemble list of valid links with URLs and titles. (NO CHANGE)
 foreach ($link_items as $item) {
@@ -117,9 +119,17 @@ $image_format = $args['image_format'] ?? null;
 if ($image_format === 'resize') {
     $image_classes[] = "$image_class--resized";
 }
+
+// Prepare ID attribute
+// NEW LOGIC: Conditionally set the ID attribute string
+$id_attr = '';
+if (!empty($section_id)) {
+    $id_attr = ' id="' . esc_attr($section_id) . '"';
+}
+
 ?>
 <div class="section section--flex">
-    <div class="<?= esc_attr(implode(' ', $classes)) ?>">
+    <div<?= $id_attr ?> class="<?= esc_attr(implode(' ', $classes)) ?>">
         <div class="feature-grid__wrap">
             <div class="feature-grid__grid">
                 <div class="feature-grid__image-section" data-aos="fade-up" data-aos-duration="1000">

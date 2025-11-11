@@ -12,3 +12,9 @@ define('THEME_CLIENT_ICON_DIR', path_join(THEME_ICON_DIR, 'backend'));
 define('THEME_SOCIAL_ICON_DIR', path_join(THEME_ICON_DIR, 'social'));
 
 define('LOGO', 'Wildings-Chocolates-logo.png');
+define('HIDDEN_PRODUCT_CATS', [
+    'loose-chocolates',
+    'box-components',
+    'box-component', // Assuming a different slug for the child category
+    // Add more slugs here as needed
+]);

@@ -9,6 +9,16 @@ return [
     'name' => 'accordion',
     'sub_fields' => [
         [
+            'label' => 'Section ID',
+            'key' => 'flex__flex__flex_sections__accordion__section_idt',
+            'name' => 'section_id',
+            'type' => 'text',
+            'instructions' => 'Adding a descriptive ID to a section allows you to create a unique HTML anchor for that specific part of your webpage. Use one word or multiple words separated by hyphens.',
+            'wrapper' => [
+                'width' => 100,
+            ],
+        ],
+        [
             'label' => 'Accordion',
             'key' => 'flex__flex__flex_sections__accordion__accordion_items',
             'name' => 'accordion_items',
