@@ -3,6 +3,10 @@
 $heading = get_field('home_shortcode_heading');
 $shortcode = get_field('home_shortcode_text_content');
 
+if (!$heading && !$shortcode) {
+    return;
+}
+
 ?>
 
 <div class="shortcode">

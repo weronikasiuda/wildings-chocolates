@@ -1,0 +1,17 @@
+.woocommerce #payment #place_order,
+.woocommerce-page #payment #place_order {
+    @extend .btn;
+    @extend .btn-primary;
+}
+
+.woocommerce-checkout #payment {
+    background-color: $beige;
+}
+
+.woocommerce-checkout #payment div.payment_box {
+    background-color: $light;
+}
+
+.woocommerce-checkout #payment div.payment_box::before {
+    background-color: $light;
+}

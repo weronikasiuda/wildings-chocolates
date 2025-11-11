@@ -50,11 +50,11 @@ get_template_part('parts/breadcrumb-nav');
 
                     if ($content) {
                     ?>
-                    <div class="section">
+                    <!-- <div class="section">
                         <div class="text-content">
                             <?php echo wp_kses_post($content); ?>
                         </div>
-                    </div>
+                    </div> -->
                     <?php
                     }
                     
